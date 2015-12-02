@@ -1,101 +1,50 @@
+'use strict';
+
 module.exports = function(grunt) {
 
   require('load-grunt-tasks')(grunt);
+  require('time-grunt')(grunt);
 
+  /* global process */
+
+  // configures browsers to run test against
+  // any of [ 'PhantomJS', 'Chrome', 'Firefox', 'IE']
+  var TEST_BROWSERS = ((process.env.TEST_BROWSERS || '').replace(/^\s+|\s+$/, '') || 'Chrome').split(/\s*,\s*/g);
 
   // project configuration
   grunt.initConfig({
+
     pkg: grunt.file.readJSON('package.json'),
 
-    config: {
-      sources: 'app',
-      dist: 'dist'
-    },
-
     jshint: {
-      src: [
-        ['<%=config.sources %>']
-      ],
+      src: [ 'lib' ],
       options: {
         jshintrc: true
       }
     },
 
-    browserify: {
+    karma: {
       options: {
-        browserifyOptions: {
-          // make sure we do not include browser shims unnecessarily
-          builtins: false,
-          insertGlobalVars: {
-            process: function () {
-                return 'undefined';
-            },
-            Buffer: function () {
-                return 'undefined';
-            }
-          }
-        },
-        transform: [ 'brfs' ]
+        configFile: 'test/config/karma.unit.js'
       },
-      watch: {
-        options: {
-          watch: true
-        },
-        files: {
-          '<%= config.dist %>/app.js': [ '<%= config.sources %>/**/*.js' ]
-        }
+      single: {
+        singleRun: true,
+        autoWatch: false,
+
+        browsers: TEST_BROWSERS
       },
-      app: {
-        files: {
-          '<%= config.dist %>/app.js': [ '<%= config.sources %>/**/*.js' ]
-        }
-      }
-    },
-    copy: {
-      app: {
-        files: [
-          {
-            expand: true,
-            cwd: '<%= config.sources %>/',
-            src: ['**/*.*', '!**/*.js'],
-            dest: '<%= config.dist %>'
-          }
-        ]
-      }
-    },
-    watch: {
-      samples: {
-        files: [ '<%= config.sources %>/**/*.*' ],
-        tasks: [ 'copy:app' ]
-      },
-    },
-    connect: {
-      options: {
-        port: 9013,
-        livereload: 9014,
-        hostname: 'localhost'
-      },
-      livereload: {
-        options: {
-          open: true,
-          base: [
-            '<%= config.dist %>'
-          ]
-        }
+      unit: {
+        browsers: TEST_BROWSERS
       }
     }
   });
 
+
   // tasks
 
-  grunt.registerTask('build', [ 'browserify:app', 'copy:app' ]);
+  grunt.registerTask('test', [ 'karma:single' ]);
 
-  grunt.registerTask('auto-build', [
-    'copy',
-    'browserify:watch',
-    'connect:livereload',
-    'watch'
-  ]);
+  grunt.registerTask('auto-test', [ 'karma:unit' ]);
 
-  grunt.registerTask('default', [ 'jshint', 'build' ]);
+  grunt.registerTask('default', [ 'jshint', 'test' ]);
 };
