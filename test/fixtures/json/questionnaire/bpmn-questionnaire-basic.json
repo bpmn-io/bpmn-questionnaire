@@ -1,0 +1,97 @@
+{
+  "name": "Lorem Ipsum Questionnaire",
+  "intro": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.", 
+  "questions": [
+    {
+      "type": "multiple-choice",
+      "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
+      "diagrams": [
+        "diagrams/lorem.bpmn"  
+      ],
+      "answers": [
+        {
+          "text": "Lorem",
+          "isTrue": false
+        },
+        {
+          "text": "Ipsum",
+          "isTrue": true
+        },
+        {
+          "text": "Dolor",
+          "isTrue": false
+        },
+        {
+          "text": "Sit",
+          "isTrue": true
+        }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "At vero eos et accusam et justo duo dolores et ea rebum.",
+      "answers": [
+        {
+          "text": "At",
+          "isTrue": false
+        },
+        {
+          "text": "Vero",
+          "isTrue": false
+        },
+        {
+          "text": "Eos",
+          "isTrue": false
+        },
+        {
+          "text": "Et",
+          "isTrue": true
+        }
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "text": "Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+      "answers": [
+        {
+          "text": "Stet",
+          "isTrue": false
+        },
+        {
+          "text": "Clita",
+          "isTrue": true
+        },
+        {
+          "text": "Kasd",
+          "isTrue": false
+        },
+        {
+          "text": "Gubergren",
+          "isTrue": true
+        }
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "text": "Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.",
+      "answers": [
+        {
+          "text": "Sed",
+          "isTrue": false
+        },
+        {
+          "text": "Diam",
+          "isTrue": true
+        },
+        {
+          "text": "Nonumy",
+          "isTrue": false
+        },
+        {
+          "text": "Eirmod",
+          "isTrue": true
+        }
+      ]
+    }
+  ]
+}

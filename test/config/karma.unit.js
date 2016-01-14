@@ -5,28 +5,33 @@ module.exports = function(karma) {
 
     basePath: '../../',
 
-    frameworks: [ 'browserify', 'mocha', 'chai' ],
+    frameworks: [
+      'browserify',
+      'mocha',
+      'chai'
+    ],
 
     files: [
       'test/spec/**/*Spec.js'
     ],
 
-    reporters: [ 'dots' ],
+    reporters: ['dots'],
 
     preprocessors: {
-      'test/spec/**/*Spec.js': [ 'browserify' ]
+      'test/spec/**/*Spec.js': ['browserify']
     },
 
-    browsers: [ 'Chrome' ],
+    browsers: ['Chrome'],
 
     browserNoActivityTimeout: 30000,
 
     singleRun: false,
+
     autoWatch: true,
 
     browserify: {
       debug: true,
-      transform: [ [ 'stringify', { global: true, extensions: [ '.bpmn', '.xml', '.css' ] } ] ]
+      transform: [['stringify', {global: true, extensions: ['.bpmn', '.xml', '.css', '.json']}]]
     }
   });
 };
