@@ -1,0 +1,42 @@
+{
+  "title": "BPMN 2.0 Grundlagen",
+  "description": "Lorem Ipsum",
+  "questions": [
+    {
+      "type": "single"
+      "question": "Wie lange lebt der Prozess?",
+      "answers": [
+        {
+          "answer": "45 Minuten",
+          "isRight": "false"
+        },
+        {
+          "answer": "120 Minuten",
+          "isRight": "false"
+        },
+        {
+          "answer": "240 Minuten",
+          "isRight": "true"
+        }
+      ]
+    },
+    {
+      "type": "multi"
+      "question": "Welche Aussagen treffen auf diesen Prozess zu?",
+      "answers": [
+        {
+          "answer": "Es kann zu einem Dead Lock kommen.",
+          "isRight": "false"
+        },
+        {
+          "answer": "Der Prozess ist valide.",
+          "isRight": "false"
+        },
+        {
+          "answer": "Es wird niemals ein Endevent erreicht.",
+          "isRight": "true"
+        }
+      ]
+    }
+  ]
+}

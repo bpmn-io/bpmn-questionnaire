@@ -24,7 +24,6 @@ module.exports = function(karma) {
     singleRun: false,
     autoWatch: true,
 
-    // browserify configuration
     browserify: {
       debug: true,
       transform: [ [ 'stringify', { global: true, extensions: [ '.bpmn', '.xml', '.css' ] } ] ]

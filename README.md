@@ -4,8 +4,6 @@ A library for questionnaires on BPMN 2.0.
 
 ## About
 
-Lorem ipsum.
-
 ## Building
 
 One time installation of all dependencies via [npm](https://npmjs.org):

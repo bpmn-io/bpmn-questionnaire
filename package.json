@@ -35,8 +35,9 @@
     "time-grunt": "^0.3.2"
   },
   "dependencies": {
-    "inherits": "^2.0.1",
     "bpmn-js": "^0.12.0",
-    "diagram-js": "^0.12.0"
+    "diagram-js": "^0.12.0",
+    "inherits": "^2.0.1",
+    "virtual-dom": "2.1.1"
   }
 }
