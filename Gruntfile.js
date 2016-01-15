@@ -36,7 +36,20 @@ module.exports = function(grunt) {
       unit: {
         browsers: TEST_BROWSERS
       }
+    },
+
+    css_selectors: {
+        options: {
+            mutations: [
+                {prefix: '.foo'}
+            ]
+        },
+
+        files: {
+            'dest/foo-prefixed.css': ['src/foo.css'],
+        }
     }
+
   });
 
 
@@ -46,5 +59,5 @@ module.exports = function(grunt) {
 
   grunt.registerTask('auto-test', [ 'karma:unit' ]);
 
-  grunt.registerTask('default', [ 'jshint', 'test' ]);
+  grunt.registerTask('default', [ 'jshint', 'auto-test' ]);
 };

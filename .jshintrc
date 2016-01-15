@@ -1,0 +1,17 @@
+{
+
+  "browser"       : true,
+  "node"          : true,
+  "devel"         : true,
+  "globalstrict"  : false,
+  "curly"         : true,
+  "eqeqeq"        : true,
+  "immed"         : true,
+  "shadow"        : false,
+  "undef"         : true,
+  "newcap"        : true,
+  "noempty"       : true,
+  "nomen"         : true,
+  "sub"           : true
+
+}
