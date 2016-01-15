@@ -11,7 +11,8 @@ describe('creating a new questionnaire', function() {
       element;
       
   // Require JSON file of a questionnaire
-  var questionnaireJSON = require('../fixtures/json/questionnaire/bpmn-questionnaire-basic.json');
+  var questionnaireJson = require('../fixtures/json/questionnaire/bpmn-questionnaire-basic.json');
+  questionnaireJson = JSON.parse(questionnaireJson);
 
   beforeEach(function() {
 
@@ -29,14 +30,14 @@ describe('creating a new questionnaire', function() {
     
     var questionnaire = new BpmnQuestionnaire({
       container: element,
-      json: questionnaireJSON
+      questionnaireJson: questionnaireJson
     });
 
     // Check for new instance
     expect(questionnaire).to.be.an.instanceof(BpmnQuestionnaire);
 
     // Check if JSON was assigned as property to new instance
-    expect(questionnaire.json).to.equal(questionnaireJSON);
+    expect(questionnaire.questionnaireJson).to.equal(questionnaireJson);
   });
 
   it('should create a new instance of BpmnQuestionnaire given an id of the container and a JSON file of a questionnaire', function() {
@@ -46,11 +47,31 @@ describe('creating a new questionnaire', function() {
 
     var questionnaire = new BpmnQuestionnaire({
       container: 'container',
-      json: questionnaireJSON
+      questionnaireJson: questionnaireJson
     });
 
     // Check for new instance
     expect(questionnaire).to.be.an.instanceof(BpmnQuestionnaire);
+
+    // Check if JSON was assigned as property to new instance
+    expect(questionnaire.questionnaireJson).to.equal(questionnaireJson);
+  });
+
+  it('should have an initial state that has been assigned to the current state of the questionnaire', function() {
+
+    var questionnaire = new BpmnQuestionnaire({
+      container: element,
+      questionnaireJson: questionnaireJson
+    });
+
+    // Check for initState property
+    expect(questionnaire.initState).to.exist;
+
+    // Check for state property
+    expect(questionnaire.state).to.exist;
+
+    // Check if JSON was assigned as property to new instance
+    expect(questionnaire.initState).to.eql(questionnaire.state);
   });
 
 });

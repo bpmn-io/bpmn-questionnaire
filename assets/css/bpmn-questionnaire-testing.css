@@ -1,0 +1,7 @@
+.test-container {
+  height: inherit !important;
+}
+
+.test-container > div.title-row {
+  height: inherit !important;
+}
