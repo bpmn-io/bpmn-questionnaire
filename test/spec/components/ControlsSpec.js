@@ -5,13 +5,13 @@ var h                 = require('virtual-dom/h');
 
 // Get components
 var BpmnQuestionnaire = require('../../../lib/BpmnQuestionnaire'),
-    Intro             = require('../../../lib/components/Intro');
+    Controls          = require('../../../lib/components/Controls');
 
 // Get test helpers
 var TestContainer     = require('mocha-test-container-support'),
     TestHelper        = require('../../TestHelper');
 
-describe('Intro', function() {
+describe('Controls', function() {
 
   var testContentContainer,
       element,
@@ -40,23 +40,23 @@ describe('Intro', function() {
   var questionnaireJson = require('../../fixtures/json/questionnaire/bpmn-questionnaire-basic.json');
   questionnaireJson = JSON.parse(questionnaireJson);
   
-  it('create an instance of the Intro component', function() {
+  it('create an instance of the Controls component', function() {
 
     // Create instance
-    var intro = new Intro(questionnaire);
+    var controls = new Controls(questionnaire);
 
-    expect(intro).to.be.an.instanceof(Intro);
+    expect(controls).to.be.an.instanceof(Controls);
 
   });
 
-  it('should render the Intro component', function() {
+  it('should render the Controls component', function() {
 
-    var intro = new Intro(questionnaire);
+    var controls = new Controls(questionnaire);
 
-    var tree = intro.render(questionnaire.state);
+    var tree = controls.render(questionnaire.state);
 
     // Check for existance of DOM element
-    expect(tree.properties.className).to.equal('bpmn-questionnaire-intro');
+    expect(tree.properties.className).to.equal('bpmn-questionnaire-controls');
 
     // Check if intro has actual content
     expect(tree.children).to.have.length.above(0);
