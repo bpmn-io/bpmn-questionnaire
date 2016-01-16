@@ -42,5 +42,8 @@
     "lodash": "4.0.0",
     "main-loop": "3.2.0",
     "virtual-dom": "2.1.1"
+  },
+  "scripts": {
+   "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS"
   }
 }
