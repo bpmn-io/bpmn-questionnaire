@@ -56,7 +56,7 @@ describe('Progress', function() {
     var tree = progress.render(questionnaire.state);
 
     // Check for existance of DOM element
-    expect(tree.properties.className).to.equal('bpmn-questionnaire-progress');
+    expect(tree.properties.className).to.equal('bpmn-questionnaire-progress bpmn-questionnaire-u-5-5');
 
     // Check if intro has actual content
     expect(tree.children).to.have.length(1);

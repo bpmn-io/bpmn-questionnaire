@@ -56,7 +56,7 @@ describe('Controls', function() {
     var tree = controls.render(questionnaire.state);
 
     // Check for existance of DOM element
-    expect(tree.properties.className).to.equal('bpmn-questionnaire-controls');
+    expect(tree.properties.className).to.equal('bpmn-questionnaire-controls bpmn-questionnaire-u-5-5');
 
     // Check if intro has actual content
     expect(tree.children).to.have.length.above(0);

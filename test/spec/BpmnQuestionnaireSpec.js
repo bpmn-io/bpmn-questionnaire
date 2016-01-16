@@ -92,7 +92,7 @@ describe('BpmnQuestionnaire', function() {
     });
 
     // Get DOM element of questionnaire
-    var questionnaireElement = element.getElementsByClassName('bpmn-questionnaire-container');
+    var questionnaireElement = element.getElementsByClassName('bpmn-questionnaire');
 
     // Check if questionnaire has been appended to parent node
     expect(questionnaireElement).to.exist;
@@ -113,7 +113,7 @@ describe('BpmnQuestionnaire', function() {
     var tree = questionnaire.render(questionnaire.state);
 
     // Check for existance of DOM element
-    expect(tree.properties.className).to.equal('bpmn-questionnaire-container');
+    expect(tree.properties.className).to.equal('bpmn-questionnaire bpmn-questionnaire-g');
 
     // Check if questionnaire has actual content
     expect(tree.children).to.have.length.above(0);

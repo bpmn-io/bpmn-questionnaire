@@ -17,7 +17,10 @@
   "devDependencies": {
     "chai": "^3.2.0",
     "grunt": "^0.4.4",
+    "grunt-contrib-concat": "0.5.1",
+    "grunt-contrib-cssmin": "0.14.0",
     "grunt-contrib-jshint": "^0.7.2",
+    "grunt-contrib-watch": "0.6.1",
     "grunt-css-selectors": "1.2.0",
     "grunt-karma": "^0.8.0",
     "karma": "^0.12.0",
@@ -32,6 +35,7 @@
     "load-grunt-tasks": "^0.3.0",
     "mocha": "^2.2.5",
     "mocha-test-container-support": "^0.1.0",
+    "purecss": "0.6.0",
     "stringify": "^3.1.0",
     "time-grunt": "^0.3.2"
   },
@@ -44,6 +48,6 @@
     "virtual-dom": "2.1.1"
   },
   "scripts": {
-   "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS"
+    "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS"
   }
 }
