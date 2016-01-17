@@ -113,7 +113,7 @@ describe('BpmnQuestionnaire', function() {
     var tree = questionnaire.render(questionnaire.state);
 
     // Check for existance of DOM element
-    expect(tree.properties.className).to.equal('bpmn-questionnaire bpmn-questionnaire-g');
+    expect(tree.properties.className).to.have.string('bpmn-questionnaire');
 
     // Check if questionnaire has actual content
     expect(tree.children).to.have.length.above(0);
