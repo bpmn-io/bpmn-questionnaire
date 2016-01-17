@@ -41,7 +41,9 @@ module.exports = function(grunt) {
     css_selectors: {
       options: {
         mutations: [
-          {search: /^\.pure/g, replace: '.bpmn-questionnaire'}
+          {search: /^\./g, replace: '.bpmn-questionnaire-'}, // Prefix all class names
+          {search: /([a-z])\.([a-z])/g, replace: '$1.bpmn-questionnaire-$2'}, // Prefix all concatenated classes
+          {search: /^[a-z]/g, prefix: '.bpmn-questionnaire'} // Prefix all tags
         ]
       },
       your_target: {
@@ -55,12 +57,8 @@ module.exports = function(grunt) {
       concat: {
         files: {
           'dist/css/bpmn-questionnaire.css': [
-            'node_modules/purecss/build/base.css',
-            //'node_modules/purecss/build/base-context.css',
-            'node_modules/purecss/build/buttons.css',
-            'node_modules/purecss/build/grids.css',
-            'node_modules/purecss/build/grids-responsive.css',
-            'assets/css/bpmn-questionnaire-custom.css'
+            'assets/css/vendor/foundation.css',
+            'assets/css/app.css'
           ]
         }
       },

@@ -1,6 +1,6 @@
 {
   "name": "bpmn-questionnaire",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A library for questionnaires on BPMN 2.0",
   "repository": {
     "type": "git",
@@ -35,7 +35,6 @@
     "load-grunt-tasks": "^0.3.0",
     "mocha": "^2.2.5",
     "mocha-test-container-support": "^0.1.0",
-    "purecss": "0.6.0",
     "stringify": "^3.1.0",
     "time-grunt": "^0.3.2"
   },

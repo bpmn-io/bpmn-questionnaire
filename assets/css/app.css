@@ -1,0 +1,11 @@
+/*!
+bpmn-questionnaire Styles v0.1.0
+*/
+
+.questionnaire {
+  padding: 1rem;
+}
+
+.controls {
+  justify-content: space-between;
+}

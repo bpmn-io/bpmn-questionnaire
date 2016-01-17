@@ -6,4 +6,4 @@ var TestHelper = module.exports = require('bpmn-js/test/helper');
 TestHelper.insertCSS('bpmn-questionnaire.min.css', require('../dist/css/bpmn-questionnaire.min.css'));
 
 // Insert additional styles for test container
-TestHelper.insertCSS('bpmn-questionnaire-testing.css', require('../assets/css/bpmn-questionnaire-testing.css'));
+TestHelper.insertCSS('test.css', require('../assets/css/test.css'));
