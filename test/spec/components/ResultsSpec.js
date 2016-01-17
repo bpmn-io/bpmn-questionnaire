@@ -53,10 +53,10 @@ describe('Results', function() {
 
     var results = new Results(questionnaire);
 
-    var tree = results.render(questionnaire.state);
+    var arrayNodes = results.render(questionnaire.state);
 
     // Check if intro has actual content
-    expect(tree).to.have.length(2);
+    expect(arrayNodes).to.have.length.above(0);
 
   });
 

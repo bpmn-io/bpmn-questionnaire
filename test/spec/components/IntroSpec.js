@@ -53,13 +53,10 @@ describe('Intro', function() {
 
     var intro = new Intro(questionnaire);
 
-    var tree = intro.render(questionnaire.state);
-
-    // Check for existance of DOM element
-    expect(tree.properties.className).to.equal('bpmn-questionnaire-intro bpmn-questionnaire-u-5-5');
+    var arrayNodes = intro.render(questionnaire.state);
 
     // Check if intro has actual content
-    expect(tree.children).to.have.length.above(0);
+    expect(arrayNodes).to.have.length.above(0);
 
   });
 
