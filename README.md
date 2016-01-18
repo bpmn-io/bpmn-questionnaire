@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/PHILIPPFROMME/bpmn-questionnaire.png?label=ready&title=Ready)](https://waffle.io/PHILIPPFROMME/bpmn-questionnaire)
 # bpmn-questionnaire
 
 __Note: This library is in very early development stage and therefore not usable.__
