@@ -10,6 +10,18 @@ A library for questionnaires on BPMN 2.0.
 Create and embed questionnaires on BPMN 2.0 in your own website. 
 Implement your own types of questions with ease.
 
+## Example Use
+
+```
+var q = new BpmnQuestionnaire({
+  questionnaire: questionnaire, // Your questionnaire
+  types: { // Your types
+    single: single
+    multiple: multiple
+  }
+});
+```
+
 ## Building
 
 One time installation of all dependencies via [npm](https://npmjs.org):
