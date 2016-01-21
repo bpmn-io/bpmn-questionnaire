@@ -1,6 +1,9 @@
 [![Stories in Ready](https://badge.waffle.io/PHILIPPFROMME/bpmn-questionnaire.png?label=ready&title=Ready)](https://waffle.io/PHILIPPFROMME/bpmn-questionnaire)
 # bpmn-questionnaire
 
+Reference-style: 
+![bpmn-questionnaire Logo][/resources/img/logo.png]
+
 __Note: This library is in very early development stage and therefore not usable.__
 
 A library for questionnaires on BPMN 2.0.
