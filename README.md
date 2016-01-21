@@ -1,8 +1,7 @@
 [![Stories in Ready](https://badge.waffle.io/PHILIPPFROMME/bpmn-questionnaire.png?label=ready&title=Ready)](https://waffle.io/PHILIPPFROMME/bpmn-questionnaire)
 # bpmn-questionnaire
 
-Reference-style: 
-![bpmn-questionnaire Logo][/resources/img/logo.png]
+<img style="height: 15px" src="/resources/img/logo.png">
 
 __Note: This library is in very early development stage and therefore not usable.__
 
