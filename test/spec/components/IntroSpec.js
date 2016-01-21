@@ -1,5 +1,9 @@
 'use strict';
 
+// chai-virtual-dom
+var chaiVirtualDom    = require('chai-virtual-dom');
+chai.use(chaiVirtualDom);
+
 // virtual-dom
 var h                 = require('virtual-dom/h');
 

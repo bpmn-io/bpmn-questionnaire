@@ -25,7 +25,7 @@ module.exports = function(grunt) {
 
     karma: {
       options: {
-        configFile: 'test/config/karma.unit.js'
+        configFile: 'test/config/karma.conf.js'
       },
       single: {
         singleRun: true,
