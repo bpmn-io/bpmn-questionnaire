@@ -24,19 +24,19 @@ var q = new BpmnQuestionnaire({
 
 ## Building
 
-One time installation of all dependencies via [npm](https://npmjs.org):
+Install all dependencies via [npm](https://npmjs.org):
 
 ```
 npm install
 ```
 
-Execute the test suite to spin up the example in your browser:
+Execute the test suite to run the tests in the browser:
 
 ```
 grunt auto-test
 ```
 
-Go to [localhost:9876/debug.html](http://localhost:9876/debug.html) to inspect the example in your Browser.
+Go to [localhost:9876/debug.html](http://localhost:9876/debug.html) to inspect the tests in the browser.
 
 ## License
 
