@@ -9,8 +9,10 @@ A library for questionnaires on BPMN 2.0.
 
 ## About
 
-Create and embed questionnaires on BPMN 2.0 in your own website. 
-Implement your own types of questions with ease.
+* Create and embed questionnaires on BPMN 2.0 in your own website. 
+* Implement your own types of questions with ease.
+* This library uses [bpmn-js](https://github.com/bpmn-io/bpmn-js) to render BPMN 2.0 diagrams. 
+
 
 ## Example Use
 
