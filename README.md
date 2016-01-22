@@ -1,4 +1,5 @@
-[![Stories in Ready](https://badge.waffle.io/PHILIPPFROMME/bpmn-questionnaire.png?label=ready&title=Ready)](https://waffle.io/PHILIPPFROMME/bpmn-questionnaire)
+[![Build Status](https://travis-ci.org/PHILIPPFROMME/bpmn-questionnaire.svg?branch=master)](https://travis-ci.org/PHILIPPFROMME/bpmn-questionnaire)
+
 # bpmn-questionnaire
 
 <img style="height: 15px" src="/resources/img/logo.png">
