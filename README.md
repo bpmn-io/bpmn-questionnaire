@@ -16,7 +16,7 @@ Implement your own types of questions with ease.
 
 Create a questionnaire:
 
-```
+```javascript
 var q = new BpmnQuestionnaire({
 
   // Your container (can be a string of an id or an element)
@@ -34,7 +34,7 @@ var q = new BpmnQuestionnaire({
 
 Create a type:
 
-```
+```javascript
 var single = BpmnQuestionnaire.createType({
   renderQuestion: function () {
     var that = this;
@@ -83,7 +83,7 @@ var single = BpmnQuestionnaire.createType({
 
 The questionnaire has to have a name, an introduction and an array of questions. A question has to have a type and a text. You can add properties to a question that are going to be used in your questionnaire. Your questionnaire may look like this:
 
-```
+```javascript
 {
   name:      'Name of your questionnaire',
   intro:     'Intro of your questionnaire',
