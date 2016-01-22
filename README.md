@@ -19,7 +19,7 @@ Create a questionnaire:
 ```
 var q = new BpmnQuestionnaire({
 
-  // Your container (can be a string of an id or an element
+  // Your container (can be a string of an id or an element)
   container: 'container',
 
   // Your questionnaire
