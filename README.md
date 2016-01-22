@@ -83,7 +83,7 @@ var single = BpmnQuestionnaire.createType({
 });
 ```
 
-Create a questionnaire:
+JSON of your questionnaire may look like this:
 
 ```javascript
 {
