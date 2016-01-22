@@ -14,7 +14,7 @@ A library for questionnaires on BPMN 2.0.
 * This library uses [bpmn-js](https://github.com/bpmn-io/bpmn-js) to render BPMN 2.0 diagrams. 
 
 
-## Example Use
+## Example
 
 Create a questionnaire:
 
