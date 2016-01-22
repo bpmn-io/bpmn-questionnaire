@@ -83,14 +83,16 @@ var single = BpmnQuestionnaire.createType({
 });
 ```
 
-The questionnaire has to have a name, an introduction and an array of questions. A question has to have a type and a text. You can add properties to a question that are going to be used in your questionnaire. Your questionnaire may look like this:
+Create a questionnaire:
 
 ```javascript
 {
+  // name, intro and questions are required
   name: 'Name of your questionnaire',
   intro: 'Intro of your questionnaire',
   questions: [
     {
+      // type and text are required
       type: 'single',
       text: 'What is 3 + 2?',
       
