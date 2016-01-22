@@ -85,8 +85,8 @@ The questionnaire has to have a name, an introduction and an array of questions.
 
 ```javascript
 {
-  name:      'Name of your questionnaire',
-  intro:     'Intro of your questionnaire',
+  name: 'Name of your questionnaire',
+  intro: 'Intro of your questionnaire',
   questions: [
     {
       type: 'single',
