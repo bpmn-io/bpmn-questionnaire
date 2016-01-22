@@ -14,14 +14,104 @@ Implement your own types of questions with ease.
 
 ## Example Use
 
+Create a questionnaire:
+
 ```
 var q = new BpmnQuestionnaire({
-  questionnaire: questionnaire, // Your questionnaire
-  types: { // Your types
+
+  // Your container (can be a string of an id or an element
+  container: 'container',
+
+  // Your questionnaire
+  questionnaire: questionnaire,
+  
+  // Your types
+  types: {
     single: single
-    multiple: multiple
   }
 });
+```
+
+Create a type:
+
+```
+var single = BpmnQuestionnaire.createType({
+  renderQuestion: function () {
+    var that = this;
+    var buttons = [];
+    this.options.answers.forEach(function(answer) {
+      buttons.push(h('button', {
+        onClick: function() {
+          that.update({
+            selected : [answer]
+          });
+        }
+      }, answer));
+    });
+    
+    var html = 
+      h('div', [
+        h('p', this.options.text),
+        h('div', buttons)
+      ]);
+  
+    // Return a virtual DOM tree of the question
+    return html;
+  },
+  renderResult: function() {
+  
+    // Return a virtual DOM tree of the result
+    return h('p', 'Your answer is ' + (this.state.isRightAnswer ? 'right' : 'wrong') + '!');
+  },
+  addToState: {
+  
+    // We add a property we are going to use later to the state of the question
+    selected: []
+  },
+  canAnswer: function() {
+  
+    // Return true if the question can be answered
+    return this.state.selected.length > 0;
+  },
+  isRightAnswer: function() {
+  
+    // Return true if the answer was right
+    return !_.difference(this.selected, this.rightAnswer).length;
+  }
+});
+```
+
+The questionnaire has to have a name, an introduction and an array of questions. A question has to have a type and a text. You can add properties to a question that are going to be used in your questionnaire. Your questionnaire may look like this:
+
+```
+{
+  name:      'Name of your questionnaire',
+  intro:     'Intro of your questionnaire',
+  questions: [
+    {
+      type: 'single',
+      text: 'What is 3 + 2?',
+      
+      // We add an array of possible answers we can iterate over in our renderQuestion function
+      answers: ["1", "3", "3,5", "5"],
+      
+      // We add an array containing the right answer to this question so we can validate the answer
+      rightAnswer: ["5"] 
+    },
+    {
+      type: 'single',
+      text: 'What is 1 + 2?',
+      answers: ["1", "3", "3,5", "5"],
+      rightAnswer: ["3"]
+    },
+    {
+      type: 'single',
+      text: 'What is 1 x 2?',
+      answers: ["1", "2", "3,5", "5"],
+      rightAnswer: ["2"]
+    }
+  ]
+}
 ```
 
 ## Building
