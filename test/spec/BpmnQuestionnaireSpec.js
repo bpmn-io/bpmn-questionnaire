@@ -69,7 +69,27 @@ describe('BpmnQuestionnaire', function() {
         return html;
       },
       renderResult: function() {
-        return h('h2', (this.state.rightAnswer ? 'Richtig!' : 'Falsch!'));
+        var card;
+
+        if (this.state.rightAnswer) {
+          card = 
+            h('div.bpmn-questionnaire-card.bpmn-questionnaire-card-inverse.bpmn-questionnaire-card-success.bpmn-questionnaire-text-xs-center',
+              h('div.bpmn-questionnaire-card-block', [
+                h('h2', {style: {'color': '#fff'}}, 'Glückwunsch!'),
+                h('p', {style: {'color': '#fff'}}, 'Sie haben diese Frage richtig beantwortet!')
+              ])
+            );
+        } else {
+          card =
+            h('div.bpmn-questionnaire-card.bpmn-questionnaire-card-inverse.bpmn-questionnaire-card-danger.bpmn-questionnaire-text-xs-center',
+              h('div.bpmn-questionnaire-card-block', [
+                h('h2', {style: {'color': '#fff'}}, 'Oh nein!'),
+                h('p', {style: {'color': '#fff'}}, 'Ihre Antwort war leider falsch! Die richtige Antwort lautet: ' + this.options.rightAnswer[0])
+              ])
+            );
+        }
+
+        return card;
       },
       checkIfValidAnswer: function() {
         return this.state.selected.length > 0;
