@@ -64,19 +64,19 @@ var single = BpmnQuestionnaire.createType({
   renderResult: function() {
   
     // Return a virtual DOM tree of the result
-    return h('p', 'Your answer is ' + (this.state.isRightAnswer ? 'right' : 'wrong') + '!');
+    return h('p', 'Your answer is ' + (this.state.rightAnswer ? 'right' : 'wrong') + '!');
   },
   addToState: {
   
     // We add a property we are going to use later to the state of the question
     selected: []
   },
-  canAnswer: function() {
+  checkIfValidAnswer: function() {
   
     // Return true if the question can be answered
     return this.state.selected.length > 0;
   },
-  isRightAnswer: function() {
+  checkIfRightAnswer: function() {
   
     // Return true if the answer was right
     return !_.difference(this.selected, this.rightAnswer).length;
