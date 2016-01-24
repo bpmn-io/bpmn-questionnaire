@@ -43,25 +43,25 @@ describe('Progress', function() {
   // Require JSON file of a questionnaire
   var questionnaireJson = require('../../fixtures/json/questionnaire/bpmn-questionnaire-basic.json');
   questionnaireJson = JSON.parse(questionnaireJson);
-  
-  it('create an instance of the Progress component', function() {
-
-    // Create instance
-    var progress = new Progress(questionnaire);
-
-    expect(progress).to.be.an.instanceof(Progress);
-
-  });
 
   it('should render the Progress component', function() {
 
-    var progress = new Progress(questionnaire);
+    // Render progress
+    var tree = Progress.render(questionnaire.state);
+    
+    // Render expected tree
+    var expected =
+      h('div.bpmn-questionnaire-row',
+        h('div', {
+          'className': 'bpmn-questionnaire-progress'
+            + (questionnaire.state.progress === 100 ? ' bpmn-questionnaire-success' : '')
+          },
+          h('div.bpmn-questionnaire-progress-meter')
+        )
+      );
 
-    var tree = progress.render(questionnaire.state);
-
-    // Check if intro has actual content
-    expect(tree.children).to.have.length(1);
-
+    // Compare the two
+    expect(tree).to.look.like(expected);
   });
 
 });

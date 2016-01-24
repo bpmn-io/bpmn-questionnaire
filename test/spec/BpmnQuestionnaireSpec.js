@@ -191,6 +191,31 @@ describe('BpmnQuestionnaire', function() {
 
   });
 
+  it('should return undefined if any of the required functions is not specified when creating a type', function() {
+
+    var type = BpmnQuestionnaire.createType({
+      // Missing functions
+    });
+
+    // Shouldn't return the constructor
+    expect(type).to.be.undefined;
+
+  });
+
+  it('should create a type by returning a constructor function', function() {
+
+    var type = BpmnQuestionnaire.createType({
+      renderQuestion:     function() {},
+      renderResult:       function() {},
+      checkIfValidAnswer: function() {},
+      checkIfRightAnswer: function() {}
+    });
+
+    // Should return the constructor
+    expect(type).to.be.a('function');
+
+  });
+
 });
 
   
