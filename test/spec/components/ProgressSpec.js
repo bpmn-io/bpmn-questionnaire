@@ -32,10 +32,21 @@ describe('Progress', function() {
     // Append the container element to the test container element
     testContentContainer.appendChild(element);
 
+    // Create a new type
+    var single = BpmnQuestionnaire.createType({
+      renderQuestion:     function() {},
+      renderResult:       function() {},
+      checkIfValidAnswer: function() {},
+      checkIfRightAnswer: function() {}
+    });
+
     //Create a new instance of BpmnQuestionnaire
     questionnaire = new BpmnQuestionnaire({
       container: element,
-      questionnaireJson: questionnaireJson
+      questionnaireJson: questionnaireJson,
+      types: {
+        single: single
+      }
     });
 
   });
@@ -52,11 +63,8 @@ describe('Progress', function() {
     // Render expected tree
     var expected =
       h('div.bpmn-questionnaire-row',
-        h('div', {
-          'className': 'bpmn-questionnaire-progress'
-            + (questionnaire.state.progress === 100 ? ' bpmn-questionnaire-success' : '')
-          },
-          h('div.bpmn-questionnaire-progress-meter')
+        h('div.bpmn-questionnaire-col-md-12',
+          h('progress.bpmn-questionnaire-progress')
         )
       );
 

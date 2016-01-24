@@ -59,7 +59,7 @@ module.exports = function(grunt) {
       concat: {
         files: {
           'dist/css/bpmn-questionnaire.css': [
-            'assets/css/vendor/foundation.css',
+            'node_modules/bootstrap/dist/css/bootstrap.css',
             'assets/css/app.css'
           ]
         }

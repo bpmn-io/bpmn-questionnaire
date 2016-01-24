@@ -32,10 +32,21 @@ describe('Intro', function() {
     // Append the container element to the test container element
     testContentContainer.appendChild(element);
 
+    // Create a new type
+    var single = BpmnQuestionnaire.createType({
+      renderQuestion:     function() {},
+      renderResult:       function() {},
+      checkIfValidAnswer: function() {},
+      checkIfRightAnswer: function() {}
+    });
+
     //Create a new instance of BpmnQuestionnaire
     questionnaire = new BpmnQuestionnaire({
       container: element,
-      questionnaireJson: questionnaireJson
+      questionnaireJson: questionnaireJson,
+      types: {
+        single: single
+      }
     });
 
   });
@@ -55,12 +66,18 @@ describe('Intro', function() {
 
   it('should render the Intro component', function() {
 
-    var intro = new Intro(questionnaire);
+    var intro = new Intro(questionnaire).render(questionnaire.state);
 
-    var arrayNodes = intro.render(questionnaire.state);
+    var expected = 
+      h('div.bpmn-questionnaire-intro.bpmn-questionnaire-row', 
+        h('div.bpmn-questionnaire-col-md-12', [
+          h('h2'),
+          h('p')  
+        ])
+      );
 
     // Check if intro has actual content
-    expect(arrayNodes).to.have.length.above(0);
+    expect(intro).to.look.like(expected);
 
   });
 

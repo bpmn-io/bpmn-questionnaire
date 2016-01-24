@@ -3,9 +3,13 @@ bpmn-questionnaire Styles v0.1.0
 */
 
 .questionnaire {
-  padding: 1rem;
+  margin: 20px;
 }
 
-.controls {
-  justify-content: space-between;
+.row {
+  margin-bottom: 20px;
+}
+
+.row:last-child {
+  margin-bottom: 0;
 }

@@ -32,10 +32,21 @@ describe('Controls', function() {
     // Append the container element to the test container element
     testContentContainer.appendChild(element);
 
+    // Create a new type
+    var single = BpmnQuestionnaire.createType({
+      renderQuestion:     function() {},
+      renderResult:       function() {},
+      checkIfValidAnswer: function() {},
+      checkIfRightAnswer: function() {}
+    });
+
     //Create a new instance of BpmnQuestionnaire
     questionnaire = new BpmnQuestionnaire({
       container: element,
-      questionnaireJson: questionnaireJson
+      questionnaireJson: questionnaireJson,
+      types: {
+        single: single
+      }
     });
 
   });
@@ -55,15 +66,17 @@ describe('Controls', function() {
 
   it('should render the Controls component', function() {
 
-    var controls = new Controls(questionnaire);
+    var controls = new Controls(questionnaire).render(questionnaire.state);
 
-    var tree = controls.render(questionnaire.state);
+    var expected =
+      h('div.bpmn-questionnaire-controls.bpmn-questionnaire-row',
+        h('div.bpmn-questionnaire-col-md-12', [
+          h('div.bpmn-questionnaire-controls-left.bpmn-questionnaire-btn-group.bpmn-questionnaire-pull-sm-left'),
+          h('div.bpmn-questionnaire-controls-right.bpmn-questionnaire-btn-group.bpmn-questionnaire-pull-sm-right')
+        ])
+      );
 
-    // Check for existance of DOM element
-    expect(tree.properties.className).to.have.string('bpmn-questionnaire-controls');
-
-    // Check if intro has actual content
-    expect(tree.children).to.have.length.above(0);
+    expect(controls).to.look.like(expected);
 
   });
 

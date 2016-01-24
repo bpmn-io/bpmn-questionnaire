@@ -14,6 +14,9 @@ var BpmnQuestionnaire = require('../../lib/BpmnQuestionnaire');
 var TestContainer     = require('mocha-test-container-support'),
     TestHelper        = require('../TestHelper');
 
+// lodash
+var difference        = require('lodash/difference');
+
 describe('BpmnQuestionnaire', function() {
 
   var testContentContainer,
@@ -35,18 +38,75 @@ describe('BpmnQuestionnaire', function() {
     // Append the container element to the test container element
     testContentContainer.appendChild(element);
 
+    // Create a new type
+    var single = BpmnQuestionnaire.createType({
+      renderQuestion: function() {
+        var that = this;
+        var buttons = [];
+        this.options.answers.forEach(function(answer) {
+          buttons.push(
+            h('button', {
+              className: 'bpmn-questionnaire-btn bpmn-questionnaire-btn-block' + (that.state.selected.indexOf(answer) !== -1 ? ' bpmn-questionnaire-btn-success' : ''), 
+              onclick: function() {
+                that.update({
+                  selected : [answer]
+                });
+              },
+              style: {
+                'margin-top':    '5px',
+                'margin-bottom': '5px'
+              }
+            }, answer)
+          );
+        });
+
+        var html = 
+          h('div', [
+            h('p', this.options.text),
+            h('div', buttons)
+          ]);
+
+        return html;
+      },
+      renderResult: function() {
+        return h('h2', (this.state.rightAnswer ? 'Richtig!' : 'Falsch!'));
+      },
+      checkIfValidAnswer: function() {
+        return this.state.selected.length > 0;
+      },
+      checkIfRightAnswer: function() {
+        return difference(this.options.rightAnswer, this.state.selected).length < 1;
+      },
+      addToState: {
+        selected: []
+      }
+    });
+
     //Create a new instance of BpmnQuestionnaire
     questionnaire = new BpmnQuestionnaire({
       container: element,
-      questionnaireJson: questionnaireJson
+      questionnaireJson: questionnaireJson,
+      types: {
+        single: single
+      }
     });
 
   });
 
   it('should create a new instance of BpmnQuestionnaire given a DOM element as container and a JSON file of a questionnaire', function() {
+    var s = BpmnQuestionnaire.createType({
+      renderQuestion:     function() {},
+      renderResult:       function() {},
+      checkIfValidAnswer: function() {},
+      checkIfRightAnswer: function() {}
+    });
+
     var q = new BpmnQuestionnaire({
       container: element,
-      questionnaireJson: questionnaireJson
+      questionnaireJson: questionnaireJson,
+      types: {
+        single: s
+      }
     });
 
     // Check for new instance
@@ -61,9 +121,19 @@ describe('BpmnQuestionnaire', function() {
     // Give our container an ID
     element.setAttribute('id', 'container');
 
+    var s = BpmnQuestionnaire.createType({
+      renderQuestion:     function() {},
+      renderResult:       function() {},
+      checkIfValidAnswer: function() {},
+      checkIfRightAnswer: function() {}
+    });
+
     var q = new BpmnQuestionnaire({
       container: 'container',
-      questionnaireJson: questionnaireJson
+      questionnaireJson: questionnaireJson,
+      types: {
+        single: s
+      }
     });
 
     // Check for new instance
@@ -74,9 +144,19 @@ describe('BpmnQuestionnaire', function() {
   });
 
   it('should have an initial state that has been assigned to the current state of the questionnaire', function() {
+    var s = BpmnQuestionnaire.createType({
+      renderQuestion:     function() {},
+      renderResult:       function() {},
+      checkIfValidAnswer: function() {},
+      checkIfRightAnswer: function() {}
+    });
+
     var q = new BpmnQuestionnaire({
       container: element,
-      questionnaireJson: questionnaireJson
+      questionnaireJson: questionnaireJson,
+      types: {
+        single: s
+      }
     });
 
     // Check for initState property
@@ -90,9 +170,19 @@ describe('BpmnQuestionnaire', function() {
   });
 
   it('should get appended to the specified container element', function() {
+    var s = BpmnQuestionnaire.createType({
+      renderQuestion:     function() {},
+      renderResult:       function() {},
+      checkIfValidAnswer: function() {},
+      checkIfRightAnswer: function() {}
+    });
+
     var q = new BpmnQuestionnaire({
       container: element,
-      questionnaireJson: questionnaireJson
+      questionnaireJson: questionnaireJson,
+      types: {
+        single: s
+      }
     });
 
     // Get DOM element of questionnaire
