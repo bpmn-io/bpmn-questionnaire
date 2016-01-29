@@ -131,9 +131,6 @@ describe('BpmnQuestionnaire', function() {
 
     // Check for new instance
     expect(q).to.be.an.instanceof(BpmnQuestionnaire);
-
-    // Check if JSON was assigned as property to new instance
-    expect(q.questionnaireJson).to.equal(questionnaireJson);
   });
 
   it('should create a new instance of BpmnQuestionnaire given an id of the container and a JSON file of a questionnaire', function() {
@@ -301,14 +298,16 @@ describe('BpmnQuestionnaire', function() {
 
   });
 
-  it('should return undefined if any of the required functions is not specified when creating a type', function() {
+  it('should throw an error if any of the required functions is not specified when creating a type', function() {
 
-    var type = BpmnQuestionnaire.createType({
-      // Missing functions
-    });
+    var type = function() {
+      return BpmnQuestionnaire.createType({
+        // Missing functions
+      });
+    };
 
-    // Shouldn't return the constructor
-    expect(type).to.be.undefined;
+    // Should throw an error
+    expect(type).to.throw(Error);
 
   });
 

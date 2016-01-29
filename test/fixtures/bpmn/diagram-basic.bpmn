@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn">
+  <bpmn:process id="Process_1" isExecutable="false">
+    <bpmn:startEvent id="StartEvent_1" name="Rechnung soll ausgestellt werden">
+      <bpmn:outgoing>SequenceFlow_19howae</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Task_17hy0mu" name="Rechnung austellen">
+      <bpmn:incoming>SequenceFlow_19howae</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0y2kplf</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="SequenceFlow_19howae" sourceRef="StartEvent_1" targetRef="Task_17hy0mu" />
+    <bpmn:endEvent id="EndEvent_0qlyvrj" name="Rechnung ausgestellt">
+      <bpmn:incoming>SequenceFlow_0y2kplf</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_0y2kplf" sourceRef="Task_17hy0mu" targetRef="EndEvent_0qlyvrj" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="185" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="158" y="138" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_17hy0mu_di" bpmnElement="Task_17hy0mu">
+        <dc:Bounds x="280" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_19howae_di" bpmnElement="SequenceFlow_19howae">
+        <di:waypoint xsi:type="dc:Point" x="221" y="120" />
+        <di:waypoint xsi:type="dc:Point" x="280" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="199.5" y="110" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="EndEvent_0qlyvrj_di" bpmnElement="EndEvent_0qlyvrj">
+        <dc:Bounds x="441" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="414" y="138" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0y2kplf_di" bpmnElement="SequenceFlow_0y2kplf">
+        <di:waypoint xsi:type="dc:Point" x="380" y="120" />
+        <di:waypoint xsi:type="dc:Point" x="441" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="383" y="110" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
