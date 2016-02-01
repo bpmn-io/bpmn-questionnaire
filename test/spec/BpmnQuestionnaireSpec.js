@@ -63,6 +63,7 @@ describe('BpmnQuestionnaire', function() {
         var html = 
           h('div', [
             h('p', this.options.text),
+            this.diagram.render(),
             h('div', buttons)
           ]);
 
