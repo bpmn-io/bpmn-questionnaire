@@ -7,15 +7,17 @@ chai.use(chaiVirtualDom);
 // virtual-dom
 var h                 = require('virtual-dom/h');
 
-// Get the contructor function
+// bpmn-questionnaire
 var BpmnQuestionnaire = require('../../lib/BpmnQuestionnaire');
 
-// Get test helpers
+// Test helpers
 var TestContainer     = require('mocha-test-container-support'),
     TestHelper        = require('../TestHelper');
 
-// lodash
-var difference        = require('lodash/difference');
+// Types
+var interactive       = require('../fixtures/js/types/interactive.js'),
+    multiple          = require('../fixtures/js/types/multiple.js'),
+    single            = require('../fixtures/js/types/single.js');
 
 describe('BpmnQuestionnaire', function() {
 
@@ -23,9 +25,12 @@ describe('BpmnQuestionnaire', function() {
       element,
       questionnaire;
       
-  // Require JSON file of a questionnaire
+  // Require JSON files of a questionnaires
   var questionnaireJson = require('../fixtures/json/questionnaire/bpmn-questionnaire-basic.json');
   questionnaireJson = JSON.parse(questionnaireJson);
+
+  var questionnaireJsonMultipleTypes = require('../fixtures/json/questionnaire/bpmn-questionnaire-multiple-types.json');
+  questionnaireJsonMultipleTypes = JSON.parse(questionnaireJsonMultipleTypes);
 
   beforeEach(function() {
 
@@ -38,76 +43,14 @@ describe('BpmnQuestionnaire', function() {
     // Append the container element to the test container element
     testContentContainer.appendChild(element);
 
-    // Create a new type
-    var single = BpmnQuestionnaire.createType({
-      renderQuestion: function() {
-        var that = this;
-        var buttons = [];
-        this.options.answers.forEach(function(answer) {
-          buttons.push(
-            h('button', {
-              className: 'bpmn-questionnaire-btn bpmn-questionnaire-btn-block' + (that.state.selected.indexOf(answer) !== -1 ? ' bpmn-questionnaire-btn-success' : ''), 
-              onclick: function() {
-                that.update({
-                  selected : [answer]
-                });
-              },
-              style: {
-                'margin-top':    '5px',
-                'margin-bottom': '5px'
-              }
-            }, answer)
-          );
-        });
-
-        var html = 
-          h('div', [
-            h('p', this.options.text),
-            h('div', buttons)
-          ]);
-
-        return html;
-      },
-      renderResult: function() {
-        var card;
-
-        if (this.state.rightAnswer) {
-          card = 
-            h('div.bpmn-questionnaire-card.bpmn-questionnaire-card-inverse.bpmn-questionnaire-card-success.bpmn-questionnaire-text-xs-center',
-              h('div.bpmn-questionnaire-card-block', [
-                h('h2', {style: {'color': '#fff'}}, 'Glückwunsch!'),
-                h('p', {style: {'color': '#fff'}}, 'Sie haben diese Frage richtig beantwortet!')
-              ])
-            );
-        } else {
-          card =
-            h('div.bpmn-questionnaire-card.bpmn-questionnaire-card-inverse.bpmn-questionnaire-card-danger.bpmn-questionnaire-text-xs-center',
-              h('div.bpmn-questionnaire-card-block', [
-                h('h2', {style: {'color': '#fff'}}, 'Oh nein!'),
-                h('p', {style: {'color': '#fff'}}, 'Ihre Antwort war leider falsch! Die richtige Antwort lautet: ' + this.options.rightAnswer[0])
-              ])
-            );
-        }
-
-        return card;
-      },
-      checkIfValidAnswer: function() {
-        return this.state.selected.length > 0;
-      },
-      checkIfRightAnswer: function() {
-        return difference(this.options.rightAnswer, this.state.selected).length < 1;
-      },
-      addToState: {
-        selected: []
-      }
-    });
-
     //Create a new instance of BpmnQuestionnaire
     questionnaire = new BpmnQuestionnaire({
       container: element,
-      questionnaireJson: questionnaireJson,
+      questionnaireJson: questionnaireJsonMultipleTypes,
       types: {
-        single: single
+        interactive: interactive,
+        multiple:    multiple,
+        single:      single
       }
     });
 

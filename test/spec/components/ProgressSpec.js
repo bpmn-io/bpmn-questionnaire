@@ -62,9 +62,11 @@ describe('Progress', function() {
     
     // Render expected tree
     var expected =
-      h('div.bpmn-questionnaire-row',
-        h('div.bpmn-questionnaire-col-md-12',
-          h('progress.bpmn-questionnaire-progress')
+      h('div.row',
+        h('div.col-md-12',
+          h('div.progress',
+            h('div.progress-bar')
+          )
         )
       );
 

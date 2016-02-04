@@ -69,10 +69,8 @@ describe('Results', function() {
     var results = new Results(questionnaire).render(questionnaire.state);
 
     var expected =
-      h('div.bpmn-questionnaire-results.bpmn-questionnaire-row',
-        h('div.bpmn-questionnaire-col-md-12', [
-          h('h2')
-        ])
+      h('div.bpmn-questionnaire-results.row',
+        h('div.col-md-12')
       );
 
     // Check if intro has actual content

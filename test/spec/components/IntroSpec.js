@@ -69,8 +69,8 @@ describe('Intro', function() {
     var intro = new Intro(questionnaire).render(questionnaire.state);
 
     var expected = 
-      h('div.bpmn-questionnaire-intro.bpmn-questionnaire-row', 
-        h('div.bpmn-questionnaire-col-md-12', [
+      h('div.bpmn-questionnaire-intro.row', 
+        h('div.col-sm-12', [
           h('h2'),
           h('p')  
         ])

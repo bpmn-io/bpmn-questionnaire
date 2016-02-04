@@ -69,14 +69,21 @@ describe('Controls', function() {
     var controls = new Controls(questionnaire).render(questionnaire.state);
 
     var expected =
-      h('div.bpmn-questionnaire-controls.bpmn-questionnaire-row',
-        h('div.bpmn-questionnaire-col-md-12', [
-          h('div.bpmn-questionnaire-controls-left.bpmn-questionnaire-btn-group.bpmn-questionnaire-pull-sm-left'),
-          h('div.bpmn-questionnaire-controls-right.bpmn-questionnaire-btn-group.bpmn-questionnaire-pull-sm-right')
-        ])
-      );
+      [
+        h('div.row',
+          h('div.col-sm-12',
+            h('hr')
+          )
+        ),
+        h('div.bpmn-questionnaire-controls.row',
+          h('div.col-sm-12', [
+            h('div.bpmn-questionnaire-controls-left.btn-group.pull-left'),
+            h('div.bpmn-questionnaire-controls-right.btn-group.pull-right')
+          ])
+        )
+      ];
 
-    expect(controls).to.look.like(expected);
+    expect(controls[0]).to.look.like(expected[0]);
 
   });
 
