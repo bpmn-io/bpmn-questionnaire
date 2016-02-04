@@ -1,0 +1,106 @@
+{  
+   "name":"BPMN 2.0 Grundlagen",
+   "intro":"Testen Sie ihr Wissen zu BPMN 2.0. Viel Erfolg!",
+   "questions":[  
+      {  
+         "type":"single",
+         "text":"Der unten stehende Prozess wird gestartet. Wie lange lebt die Prozessinstanz?",
+         "answers":[  
+            "10 Minuten",
+            "45 Minuten",
+            "50 Minuten",
+            "75 Minuten"
+         ],
+         "rightAnswer":[  
+            "45 Minuten"
+         ],
+         "diagram":{  
+            "url":"https://raw.githubusercontent.com/camunda/bpmn-for-research/master/BPMN%20for%20Research/German/01-Vorbereitung-des-Warenversands/03-Musterl%C3%B6sung/vorbereitung-des-warenversands.bpmn",
+            "interactive":false
+         }
+      },
+      {  
+         "type":"multiple",
+         "text":"Der unten stehende Prozess wird gestartet. Wie lange lebt die Prozessinstanz?",
+         "answers":[  
+            "10 Minuten",
+            "45 Minuten",
+            "50 Minuten",
+            "75 Minuten"
+         ],
+         "rightAnswers":[
+            "10 Minuten",  
+            "45 Minuten"
+         ],
+         "diagram":{  
+            "url":"https://raw.githubusercontent.com/camunda/bpmn-for-research/master/BPMN%20for%20Research/German/02-Regressnahme/03-Musterl%C3%B6sung/regressnahme.bpmn",
+            "interactive":false
+         }
+      },
+      {  
+         "type":"interactive",
+         "text":"Der unten stehende Prozess wird gestartet. Kennzeichnen sie die Elemente, an denen es zu einem Deadlock kommen kann.",
+         "diagram":{  
+            "url":"https://raw.githubusercontent.com/camunda/bpmn-for-research/master/BPMN%20for%20Research/German/03-Schufascoring/03-Musterl%C3%B6sung/schufascoring-asynchron.bpmn",
+            "interactive":true,
+            "rightAnswers":[
+               "ExclusiveGateway_125lzox"
+            ],
+            "noSelect":{
+               "elements":[
+               ],
+               "types":[
+                  "label",
+                  "participant"
+               ]
+            }
+         }
+      },
+      {  
+         "type":"single",
+         "text":"Der unten stehende Prozess wird gestartet. Wie lange lebt die Prozessinstanz?",
+         "answers":[  
+            "10 Minuten",
+            "45 Minuten",
+            "50 Minuten",
+            "75 Minuten"
+         ],
+         "rightAnswer":[  
+            "45 Minuten"
+         ],
+         "diagram":{  
+            "url":"https://raw.githubusercontent.com/camunda/bpmn-for-research/master/BPMN%20for%20Research/German/01-Vorbereitung-des-Warenversands/03-Musterl%C3%B6sung/vorbereitung-des-warenversands.bpmn",
+            "interactive":false
+         }
+      },
+      {  
+         "type":"multiple",
+         "text":"Der unten stehende Prozess wird gestartet. Wie lange lebt die Prozessinstanz?",
+         "answers":[  
+            "10 Minuten",
+            "45 Minuten",
+            "50 Minuten",
+            "75 Minuten"
+         ],
+         "rightAnswers":[
+            "10 Minuten",  
+            "45 Minuten"
+         ],
+         "diagram":{  
+            "url":"https://raw.githubusercontent.com/camunda/bpmn-for-research/master/BPMN%20for%20Research/German/02-Regressnahme/03-Musterl%C3%B6sung/regressnahme.bpmn",
+            "interactive":false
+         }
+      },
+      {  
+         "type":"interactive",
+         "text":"Der unten stehende Prozess wird gestartet. Kennzeichnen sie die Elemente, an denen es zu einem Deadlock kommen kann.",
+         "diagram":{  
+            "url":"https://raw.githubusercontent.com/camunda/bpmn-for-research/master/BPMN%20for%20Research/German/03-Schufascoring/03-Musterl%C3%B6sung/schufascoring-asynchron.bpmn",
+            "interactive":true,
+            "rightAnswers":[
+               "ExclusiveGateway_125lzox"
+            ]
+         }
+      }
+   ]
+}

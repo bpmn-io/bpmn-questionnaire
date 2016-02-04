@@ -2,14 +2,9 @@
 bpmn-questionnaire Styles v0.1.0
 */
 
-.questionnaire {
-  margin: 20px;
-}
-
-.row {
-  margin-bottom: 20px;
-}
-
-.row:last-child {
-  margin-bottom: 0;
+.container-fluid{
+  margin: 15px;
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }

@@ -40,19 +40,14 @@ module.exports = function(grunt) {
       }
     },
 
-    css_selectors: {
-      options: {
-        mutations: [
-          {search: /^\./g, replace: '.bpmn-questionnaire-'}, // Prefix all class names
-          {search: /([a-z])\.([a-z])/g, replace: '$1.bpmn-questionnaire-$2'}, // Prefix all concatenated classes
-          {search: /^[a-z]/g, prefix: '.bpmn-questionnaire'} // Prefix all tags
-        ]
-      },
-      your_target: {
-        files: {
-          'dist/css/bpmn-questionnaire.css': ['dist/css/bpmn-questionnaire.css'],
-        },
-      },
+    css_wrap: {
+      compile: {
+        src: 'dist/css/bpmn-questionnaire.css',
+        dest: 'dist/css/bpmn-questionnaire.css',
+        options: {
+          selector: '.bpmn-questionnaire'
+        }
+      }
     },
 
     cssmin: {
@@ -80,6 +75,26 @@ module.exports = function(grunt) {
         files: 'assets/css/**/*.css',
         tasks: ['build-css']
       },
+    },
+
+    browserify: {
+      main: {
+        src: 'lib/BpmnQuestionnaire.js',
+        dest: 'dist/js/bpmn-questionnaire.js',
+        options: {
+          browserifyOptions: {
+            standalone: 'BpmnQuestionnaire'
+          }
+        }
+      }
+    },
+
+    uglify: {
+      main: {
+        files: {
+          'dist/js/bpmn-questionnaire.min.js': ['dist/js/bpmn-questionnaire.js']
+        }
+      }
     }
 
   });
@@ -87,7 +102,9 @@ module.exports = function(grunt) {
 
   // Tasks
 
-  grunt.registerTask('build-css', [ 'cssmin:concat', 'css_selectors', 'cssmin:minify' ]);
+  grunt.registerTask('build-css', [ 'cssmin:concat', 'css_wrap', 'cssmin:minify' ]);
+
+  grunt.registerTask('build-js', [ 'browserify', 'uglify' ]);
 
   grunt.registerTask('test', [ 'karma:single' ]);
 
@@ -95,7 +112,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', [ 'jshint', 'test' ]);
 
-  grunt.registerTask('build', [ 'build-css' ]);
+  grunt.registerTask('build', [ 'build-js', 'build-css' ]);
 
   grunt.registerTask('auto-build', [ 'watch:css' ]);
 

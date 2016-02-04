@@ -1,10 +1,10 @@
 {  
    "name":"BPMN 2.0 Grundlagen",
-   "intro":"In diesem kleinen Test können Sie ihr BPMN 2.0 Wissen testen. Viel Erfolg!",
+   "intro":"Testen Sie ihr Wissen zu BPMN 2.0. Viel Erfolg!",
    "questions":[  
       {  
          "type":"single",
-         "text":"Der unten stehende Prozess wird gestartet.  Wie lange lebt die Prozessinstanz?",
+         "text":"(single) Der unten stehende Prozess wird gestartet. Wie lange lebt die Prozessinstanz?",
          "answers":[  
             "10 Minuten",
             "45 Minuten",
@@ -15,24 +15,7 @@
             "45 Minuten"
          ],
          "diagram":{  
-            "url":"https://raw.githubusercontent.com/bpmn-io/bpmn-js/master/test/fixtures/bpmn/simple.bpmn",
-            "interactive":false
-         }
-      },
-      {  
-         "type":"single",
-         "text":"Der unten stehende Prozess wird gestartet.  Wie lange lebt die Prozessinstanz?",
-         "answers":[  
-            "100 Minuten",
-            "450 Minuten",
-            "500 Minuten",
-            "750 Minuten"
-         ],
-         "rightAnswer":[  
-            "450 Minuten"
-         ],
-         "diagram":{  
-            "url":"https://raw.githubusercontent.com/bpmn-io/bpmn-js/master/test/fixtures/bpmn/basic.bpmn",
+            "url":"https://raw.githubusercontent.com/bpmn-io/bpmn-js-examples/master/simple-bower/resources/pizza-collaboration.bpmn",
             "interactive":false
          }
       }
