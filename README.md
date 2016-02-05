@@ -83,7 +83,8 @@ var single = BpmnQuestionnaire.createType({
             h('div.panel-heading',
               h('h3.panel-title', 'Oh nein!')
             ),
-            h('div.panel-body', 'Ihre Antwort war leider falsch! Die richtige Antwort lautet: ' + this.options.rightAnswer[0])
+            h('div.panel-body', 'Ihre Antwort war leider falsch! Die richtige Antwort lautet: ' +
+              this.options.rightAnswer[0])
         ]);
     }
 
