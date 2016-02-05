@@ -17,6 +17,8 @@ A library for questionnaires on BPMN 2.0.
 
 ## Example
 
+[__Check out an example project__](https://github.com/PHILIPPFROMME/bpmn-questionnaire-example)
+
 Create a questionnaire:
 
 ```javascript
