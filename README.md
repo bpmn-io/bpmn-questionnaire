@@ -21,65 +21,82 @@ Create a questionnaire:
 
 ```javascript
 var q = new BpmnQuestionnaire({
-
-  // Your container (can be a string of an id or an element)
-  container: 'container',
-
-  // Your questionnaire
-  questionnaire: questionnaire,
-  
-  // Your types
-  types: {
-    single: single
-  }
-});
+      container: element,
+      questionnaireJson: questionnaireJson,
+      types: {
+        single: s
+      }
+    });
 ```
 
 Create a type:
 
 ```javascript
 var single = BpmnQuestionnaire.createType({
-  renderQuestion: function () {
+  renderQuestion: function() {
     var that = this;
     var buttons = [];
     this.options.answers.forEach(function(answer) {
-      buttons.push(h('button', {
-        onClick: function() {
-          that.update({
-            selected : [answer]
-          });
-        }
-      }, answer));
+      buttons.push(
+        h('button', {
+          className: 'btn btn-block' + (that.state.selected.indexOf(answer) !== -1 ? ' btn-success' : ''), 
+          onclick: function() {
+            that.update({
+              selected: [answer]
+            });
+          },
+          style: {
+            marginTop:    '5px',
+            marginBottom: '5px'
+          }
+        }, answer)
+      );
     });
-    
+
     var html = 
       h('div', [
         h('p', this.options.text),
-        h('div', buttons)
+        this.diagram.render(this.state),
+        h('div', {
+          style: {
+            marginTop: '20px'
+          }
+        }, buttons)
       ]);
-  
-    // Return a virtual DOM tree of the question
+
     return html;
   },
   renderResult: function() {
-  
-    // Return a virtual DOM tree of the result
-    return h('p', 'Your answer is ' + (this.state.rightAnswer ? 'right' : 'wrong') + '!');
-  },
-  addToState: {
-  
-    // We add a property we are going to use later to the state of the question
-    selected: []
+    var html;
+
+    if (this.state.rightAnswer) {
+      html = 
+        h('div.panel.panel-success', [
+            h('div.panel-heading',
+              h('h3.panel-title', 'Glückwunsch!')
+            ),
+            h('div.panel-body', 'Sie haben diese Frage richtig beantwortet!')
+        ]);
+    } else {
+      html =
+        h('div.panel.panel-danger', [
+            h('div.panel-heading',
+              h('h3.panel-title', 'Oh nein!')
+            ),
+            h('div.panel-body', 'Ihre Antwort war leider falsch! Die richtige Antwort lautet: ' + this.options.rightAnswer[0])
+        ]);
+    }
+
+    return html;
   },
   checkIfValidAnswer: function() {
-  
-    // Return true if the question can be answered
     return this.state.selected.length > 0;
   },
   checkIfRightAnswer: function() {
-  
-    // Return true if the answer was right
-    return !_.difference(this.selected, this.rightAnswer).length;
+    return difference(this.options.rightAnswer, this.state.selected).length < 1;
+  },
+  addToState: {
+    selected: []
   }
 });
 ```
@@ -87,35 +104,28 @@ var single = BpmnQuestionnaire.createType({
 JSON of your questionnaire may look like this:
 
 ```javascript
-{
-  // name, intro and questions are required
-  name: 'Name of your questionnaire',
-  intro: 'Intro of your questionnaire',
-  questions: [
-    {
-      // type and text are required
-      type: 'single',
-      text: 'What is 3 + 2?',
-      
-      // We add an array of possible answers we can iterate over in our renderQuestion function
-      answers: ["1", "3", "3,5", "5"],
-      
-      // We add an array containing the right answer to this question so we can validate the answer
-      rightAnswer: ["5"] 
-    },
-    {
-      type: 'single',
-      text: 'What is 1 + 2?',
-      answers: ["1", "3", "3,5", "5"],
-      rightAnswer: ["3"]
-    },
-    {
-      type: 'single',
-      text: 'What is 1 x 2?',
-      answers: ["1", "2", "3,5", "5"],
-      rightAnswer: ["2"]
-    }
-  ]
+{  
+   "name":"BPMN 2.0 Grundlagen",
+   "intro":"Testen Sie ihr Wissen zu BPMN 2.0. Viel Erfolg!",
+   "questions":[  
+      {  
+         "type":"single",
+         "text":"Der unten stehende Prozess wird gestartet. Wie lange lebt die Prozessinstanz?",
+         "answers":[  
+            "10 Minuten",
+            "45 Minuten",
+            "50 Minuten",
+            "75 Minuten"
+         ],
+         "rightAnswer":[  
+            "45 Minuten"
+         ],
+         "diagram":{  
+            "url":"https://raw.githubusercontent.com/bpmn-io/bpmn-js-examples/master/simple-bower/resources/pizza-collaboration.bpmn",
+            "interactive":false
+         }
+      }
+   ]
 }
 ```
 
