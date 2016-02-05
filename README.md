@@ -23,12 +23,12 @@ Create a questionnaire:
 
 ```javascript
 var q = new BpmnQuestionnaire({
-      container: element,
-      questionnaireJson: questionnaireJson,
-      types: {
-        single: s
-      }
-    });
+  container: element,
+  questionnaireJson: questionnaireJson,
+  types: {
+    single: s
+  }
+});
 ```
 
 Create a type:
