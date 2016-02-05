@@ -4,7 +4,7 @@
    "questions":[  
       {  
          "type":"single",
-         "text":"(single) Der unten stehende Prozess wird gestartet. Wie lange lebt die Prozessinstanz?",
+         "text":"Der unten stehende Prozess wird gestartet. Wie lange lebt die Prozessinstanz?",
          "answers":[  
             "10 Minuten",
             "45 Minuten",
