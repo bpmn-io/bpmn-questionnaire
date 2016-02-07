@@ -1,0 +1,24 @@
+{
+  "name": "bpmn-questionnaire",
+  "description": "A library for questionnaires on BPMN 2.0",
+  "main": [
+    "dist/css/bpmn-questionnaire.css",
+    "dist/bpmn-questionnaire.js"
+  ],
+  "authors": [
+    "Philipp Fromme"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "bpmn-questionnaire"
+  ],
+  "homepage": "https://github.com/PHILIPPFROMME/bpmn-questionnaire",
+  "moduleType": "globals",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
