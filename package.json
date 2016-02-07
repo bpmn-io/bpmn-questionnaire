@@ -1,6 +1,6 @@
 {
   "name": "bpmn-questionnaire",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "A library for questionnaires on BPMN 2.0",
   "repository": {
     "type": "git",
