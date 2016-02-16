@@ -5,12 +5,6 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
   require('time-grunt')(grunt);
 
-  /* global process */
-
-  // configures browsers to run test against
-  // any of [ 'PhantomJS', 'Chrome', 'Firefox', 'IE']
-  // var TEST_BROWSERS = ((process.env.TEST_BROWSERS || '').replace(/^\s+|\s+$/, '') || 'Chrome').split(/\s*,\s*/g);
-
   // project configuration
   grunt.initConfig({
 
@@ -30,12 +24,9 @@ module.exports = function(grunt) {
       single: {
         singleRun: true,
         autoWatch: false,
-
-        // browsers: TEST_BROWSERS
         browsers: [ 'Chrome' ]
       },
       unit: {
-        // browsers: TEST_BROWSERS
         browsers: [ 'Chrome' ]
       }
     },
@@ -101,19 +92,12 @@ module.exports = function(grunt) {
 
 
   // Tasks
-
   grunt.registerTask('build-css', [ 'cssmin:concat', 'css_wrap', 'cssmin:minify' ]);
-
   grunt.registerTask('build-js', [ 'browserify', 'uglify' ]);
-
   grunt.registerTask('test', [ 'karma:single' ]);
-
   grunt.registerTask('auto-test', [ 'karma:unit' ]);
-
   grunt.registerTask('default', [ 'jshint', 'test' ]);
-
   grunt.registerTask('build', [ 'build-js', 'build-css' ]);
-
   grunt.registerTask('auto-build', [ 'watch:css' ]);
 
 };

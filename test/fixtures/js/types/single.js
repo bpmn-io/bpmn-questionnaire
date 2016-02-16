@@ -33,7 +33,7 @@ var single = BpmnQuestionnaire.createType({
     var html = 
       h('div', [
         h('p', this.options.text),
-        this.diagram.render(this.state),
+        this.diagram ? this.diagram.render(this.state) : h('div'),
         h('div', {
           style: {
             marginTop: '20px'

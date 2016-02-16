@@ -20,6 +20,19 @@
          }
       },
       {  
+         "type":"single",
+         "text":"Welches der folgenden Elemente ist nicht Teil der BPMN 2.0?",
+         "answers":[  
+            "Subprozess",
+            "Sequenzfluss",
+            "Anwendungsfall",
+            "Artefakt"
+         ],
+         "rightAnswer":[  
+            "Anwendungsfall"
+         ]
+      },
+      {  
          "type":"multiple",
          "text":"Der unten stehende Prozess wird gestartet. Wie lange lebt die Prozessinstanz?",
          "answers":[  
