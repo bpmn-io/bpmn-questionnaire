@@ -1,60 +1,91 @@
 {  
-   "name":"BPMN 2.0 Grundlagen",
-   "intro":"Testen Sie ihr Wissen zu BPMN 2.0. Viel Erfolg!",
-   "questions":[  
+   "name":"BPMN-Grundlagentest",
+   "intro":"Bitte beantworten sie die nachfolgenden Fragen. In den meisten Fällen ist nur eine Antwort korrekt, in Ausnahmefällen auch mehrere. Im jeweiligen Fragentext ist ein expliziter Hinweis enthalten, ob es nur eine oder mehrere richtige Antworten gibt.",
+   "questions":[
       {  
          "type":"single",
-         "text":"Der unten stehende Prozess wird gestartet. Wie lange lebt die Prozessinstanz?",
+         "text":"Wofür steht BPMN 2.0?",
          "answers":[  
-            "10 Minuten",
-            "45 Minuten",
-            "50 Minuten",
-            "75 Minuten"
+            "Business Process Management Notation 2.0",
+            "Business Process Modeling Notation 2.0",
+            "Business Process Mastering Notation 2.0",
+            "Business Process Model and Notation 2.0"
          ],
          "rightAnswer":[  
-            "45 Minuten"
-         ],
-         "diagram":{  
-            "url":"https://raw.githubusercontent.com/camunda/bpmn-for-research/master/BPMN%20for%20Research/German/01-Vorbereitung-des-Warenversands/03-Musterl%C3%B6sung/vorbereitung-des-warenversands.bpmn",
-            "interactive":false
-         }
-      },
+            "Business Process Model and Notation 2.0"
+         ]
+      },  
       {  
          "type":"single",
-         "text":"Welches der folgenden Elemente ist nicht Teil der BPMN 2.0?",
+         "text":"Welche Institution ist für BPMN verantwortlich?",
          "answers":[  
-            "Subprozess",
-            "Sequenzfluss",
-            "Anwendungsfall",
-            "Artefakt"
+            "OASIS",
+            "OMG",
+            "ISO",
+            "UML"
          ],
          "rightAnswer":[  
-            "Anwendungsfall"
+            "OMG"
          ]
       },
       {  
          "type":"multiple",
-         "text":"Der unten stehende Prozess wird gestartet. Wie lange lebt die Prozessinstanz?",
+         "text":"Welche Aufgaben kann eine Process Engine übernehmen? (Zwei richtige Antworten)",
          "answers":[  
-            "10 Minuten",
-            "45 Minuten",
-            "50 Minuten",
-            "75 Minuten"
+            "Die Verwaltung fachlicher Prozessmodelle.",
+            "Die Ausführung technischer Prozessmodelle.",
+            "Das Messen von (technischen) Kennzahlen.",
+            "Die Einführung einer Serviceorientierten Architektur."
          ],
-         "rightAnswers":[
-            "10 Minuten",  
-            "45 Minuten"
+         "rightAnswers":[  
+            "Die Ausführung technischer Prozessmodelle.",
+            "Das Messen von (technischen) Kennzahlen."
+         ]
+      },
+      {  
+         "type":"single",
+         "text":"Welche Aussage zum Verhältnis zwischen BPMN und BPEL ist korrekt?",
+         "answers":[  
+            "BPMN und BPEL besitzen dieselbe Symbolik.",
+            "BPEL ist nur für Techniker gedacht, BPMN nur für das Business.",
+            "BPMN 2.0 wird BPEL vermutlich ersetzen.",
+            "BPEL kann als Austauschformat für BPMN-Diagramme dienen."
          ],
-         "diagram":{  
-            "url":"https://raw.githubusercontent.com/camunda/bpmn-for-research/master/BPMN%20for%20Research/German/02-Regressnahme/03-Musterl%C3%B6sung/regressnahme.bpmn",
-            "interactive":false
-         }
+         "rightAnswer":[
+            "BPMN 2.0 wird BPEL vermutlich ersetzen."
+         ]
+      },
+      {  
+         "type":"single",
+         "text":"Was ist die wichtigste Neuerung an BPMN 2.0?",
+         "answers":[  
+            "Die Einführung einer Farbsemantik.",
+            "Die Erweiterung um Organigramme.",
+            "Die Definition eines formalen Metamodells.",
+            "Das standardisierte Mapping auf eEPK."
+         ],
+         "rightAnswer":[
+            "Die Definition eines formalen Metamodells."
+         ]
+      },
+      {  
+         "type":"single",
+         "text":"Was ist eine Prozessinstanz?",
+         "answers":[  
+            "Ein Prozessbeteiligter.",
+            "Ein konkreter Durchlauf eines Prozesses.",
+            "Ein Mensch, der den Prozess besonders gut kennt.",
+            "\"Prozessinstanz\" ist ein anderes Wort für \"Prozessmodell\"."
+         ],
+         "rightAnswer":[
+            "Ein konkreter Durchlauf eines Prozesses."
+         ]
       },
       {  
          "type":"interactive",
-         "text":"Der unten stehende Prozess wird gestartet. Kennzeichnen sie die Elemente, an denen es zu einem Deadlock kommen kann.",
+         "text":"Dieses Prozessmodell enthält 4 Fehler. Bitte wählen sie alle fehlerhaften Elemente aus.",
          "diagram":{  
-            "url":"https://raw.githubusercontent.com/camunda/bpmn-for-research/master/BPMN%20for%20Research/German/03-Schufascoring/03-Musterl%C3%B6sung/schufascoring-asynchron.bpmn",
+            "url":"",
             "interactive":true,
             "rightAnswers":[
                "ExclusiveGateway_125lzox"
@@ -67,52 +98,6 @@
                   "participant"
                ]
             }
-         }
-      },
-      {  
-         "type":"single",
-         "text":"Der unten stehende Prozess wird gestartet. Wie lange lebt die Prozessinstanz?",
-         "answers":[  
-            "10 Minuten",
-            "45 Minuten",
-            "50 Minuten",
-            "75 Minuten"
-         ],
-         "rightAnswer":[  
-            "45 Minuten"
-         ],
-         "diagram":{  
-            "url":"https://raw.githubusercontent.com/camunda/bpmn-for-research/master/BPMN%20for%20Research/German/01-Vorbereitung-des-Warenversands/03-Musterl%C3%B6sung/vorbereitung-des-warenversands.bpmn",
-            "interactive":false
-         }
-      },
-      {  
-         "type":"multiple",
-         "text":"Der unten stehende Prozess wird gestartet. Wie lange lebt die Prozessinstanz?",
-         "answers":[  
-            "10 Minuten",
-            "45 Minuten",
-            "50 Minuten",
-            "75 Minuten"
-         ],
-         "rightAnswers":[
-            "10 Minuten",  
-            "45 Minuten"
-         ],
-         "diagram":{  
-            "url":"https://raw.githubusercontent.com/camunda/bpmn-for-research/master/BPMN%20for%20Research/German/02-Regressnahme/03-Musterl%C3%B6sung/regressnahme.bpmn",
-            "interactive":false
-         }
-      },
-      {  
-         "type":"interactive",
-         "text":"Der unten stehende Prozess wird gestartet. Kennzeichnen sie die Elemente, an denen es zu einem Deadlock kommen kann.",
-         "diagram":{  
-            "url":"https://raw.githubusercontent.com/camunda/bpmn-for-research/master/BPMN%20for%20Research/German/03-Schufascoring/03-Musterl%C3%B6sung/schufascoring-asynchron.bpmn",
-            "interactive":true,
-            "rightAnswers":[
-               "ExclusiveGateway_125lzox"
-            ]
          }
       }
    ]

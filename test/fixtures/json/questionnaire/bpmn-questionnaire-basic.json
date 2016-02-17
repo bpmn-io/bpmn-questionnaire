@@ -1,23 +1,19 @@
 {  
-   "name":"BPMN 2.0 Grundlagen",
-   "intro":"Testen Sie ihr Wissen zu BPMN 2.0. Viel Erfolg!",
+   "name":"BPMN-Grundlagentest",
+   "intro":"Bitte beantworten sie die nachfolgenden Fragen. In den meisten Fällen ist nur eine Antwort korrekt, in Ausnahmefällen auch mehrere. Im jeweiligen Fragentext ist ein expliziter Hinweis enthalten, ob es nur eine oder mehrere richtige Antworten gibt.",
    "questions":[  
       {  
          "type":"single",
-         "text":"Der unten stehende Prozess wird gestartet. Wie lange lebt die Prozessinstanz?",
+         "text":"Wofür steht BPMN 2.0?",
          "answers":[  
-            "10 Minuten",
-            "45 Minuten",
-            "50 Minuten",
-            "75 Minuten"
+            "Business Process Management Notation 2.0",
+            "Business Process Modeling Notation 2.0",
+            "Business Process Mastering Notation 2.0",
+            "Business Process Model and Notation 2.0"
          ],
          "rightAnswer":[  
-            "45 Minuten"
-         ],
-         "diagram":{  
-            "url":"https://raw.githubusercontent.com/bpmn-io/bpmn-js-examples/master/simple-bower/resources/pizza-collaboration.bpmn",
-            "interactive":false
-         }
+            "Business Process Model and Notation 2.0"
+         ]
       }
    ]
 }

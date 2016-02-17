@@ -27,7 +27,7 @@ var multiple = BpmnQuestionnaire.createType({
             var selected = that.state.selected.slice(0);
 
             if(that.state.selected.indexOf(answer) !== -1) {
-              selected = selected.splice(that.state.selected.indexOf(answer), 1);
+              selected.splice(that.state.selected.indexOf(answer), 1);
             } else {
               selected.push(answer);
             }
@@ -36,6 +36,8 @@ var multiple = BpmnQuestionnaire.createType({
             that.update({
               selected: selected
             });
+
+            console.log(selected);
           },
           style: {
             marginTop:    '5px',
