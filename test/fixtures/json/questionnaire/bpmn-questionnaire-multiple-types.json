@@ -85,10 +85,13 @@
          "type":"interactive",
          "text":"Dieses Prozessmodell enthält 4 Fehler. Bitte wählen sie alle fehlerhaften Elemente aus.",
          "diagram":{  
-            "url":"",
+            "url":"https://raw.githubusercontent.com/bpmn-io/bpmn-questionnaire/master/test/fixtures/bpmn/diagram-1.bpmn",
             "interactive":true,
             "rightAnswers":[
-               "ExclusiveGateway_125lzox"
+               "IntermediateCatchEvent_1r9cp4a",
+               "InclusiveGateway_1jd0hrf",
+               "EndEvent_0diucuw",
+               "IntermediateThrowEvent_03x03k5"
             ],
             "noSelect":{
                "elements":[
@@ -98,6 +101,23 @@
                   "participant"
                ]
             }
+         }
+      },
+      {  
+         "type":"single",
+         "text":"Der unten stehende Prozess wird gestartet. Wie lange \"lebt\" die Prozessinstanz?",
+         "answers":[  
+            "Unendlich lange.",
+            "30 Tage.",
+            "45 Tage.",
+            "60 Tage."
+         ],
+         "rightAnswer":[
+            "45 Tage."
+         ],
+         "diagram":{
+            "url":"",
+            "interactive":"false"
          }
       }
    ]
