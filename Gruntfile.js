@@ -66,10 +66,14 @@ module.exports = function(grunt) {
         files: 'assets/css/**/*.css',
         tasks: ['build-css']
       },
+      js: {
+        files: [ 'lib/**/*.js', 'test/**/*.css' ],
+        tasks: [ 'build-js' ]
+      }
     },
 
     browserify: {
-      main: {
+      dist: {
         src: 'lib/BpmnQuestionnaire.js',
         dest: 'dist/js/bpmn-questionnaire.js',
         options: {
@@ -93,11 +97,10 @@ module.exports = function(grunt) {
 
   // Tasks
   grunt.registerTask('build-css', [ 'cssmin:concat', 'css_wrap', 'cssmin:minify' ]);
-  grunt.registerTask('build-js', [ 'browserify', 'uglify' ]);
+  grunt.registerTask('build-js', [ 'browserify:dist', 'uglify' ]);
   grunt.registerTask('test', [ 'karma:single' ]);
   grunt.registerTask('auto-test', [ 'karma:unit' ]);
-  grunt.registerTask('default', [ 'jshint', 'test' ]);
   grunt.registerTask('build', [ 'build-js', 'build-css' ]);
-  grunt.registerTask('auto-build', [ 'watch:css' ]);
+  grunt.registerTask('auto-build', [ 'watch:js', 'watch:css' ]);
 
 };

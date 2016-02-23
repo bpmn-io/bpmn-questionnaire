@@ -1,10 +1,8 @@
-[![Build Status](https://travis-ci.org/PHILIPPFROMME/bpmn-questionnaire.svg?branch=master)](https://travis-ci.org/PHILIPPFROMME/bpmn-questionnaire)
-
 # bpmn-questionnaire
 
 <img style="height: 15px" src="/resources/img/logo.png">
 
-__Note: This library is in very early development stage and therefore not usable.__
+__Note: This library is in early development stage.__
 
 A library for questionnaires on BPMN 2.0.
 

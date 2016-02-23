@@ -116,7 +116,7 @@
             "45 Tage."
          ],
          "diagram":{
-            "url":"",
+            "url":"https://raw.githubusercontent.com/bpmn-io/bpmn-questionnaire/master/test/fixtures/bpmn/diagram-2.bpmn",
             "interactive":"false"
          }
       }
