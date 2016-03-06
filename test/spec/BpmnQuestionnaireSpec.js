@@ -24,7 +24,7 @@ describe('BpmnQuestionnaire', function() {
   var testContentContainer,
       element,
       questionnaire;
-      
+
   // Require JSON files of a questionnaires
   var questionnaireJson = require('../fixtures/json/questionnaire/bpmn-questionnaire-basic.json');
   questionnaireJson = JSON.parse(questionnaireJson);
@@ -77,7 +77,7 @@ describe('BpmnQuestionnaire', function() {
   });
 
   it('should create a new instance of BpmnQuestionnaire given an id of the container and a JSON file of a questionnaire', function() {
-    
+
     // Give our container an ID
     element.setAttribute('id', 'container');
 
@@ -208,7 +208,7 @@ describe('BpmnQuestionnaire', function() {
 
     // Set index of current question to last question
     questionnaire.update({currentQuestion: questionnaire.questionnaireJson.questions.length});
-    
+
     // Check if decreasing
     expect(questionnaire.previousQuestion.bind(questionnaire)).to.decrease(questionnaire.state, 'currentQuestion');
 
@@ -241,6 +241,44 @@ describe('BpmnQuestionnaire', function() {
 
   });
 
+  it('should return the results of a questionnaire', function() {
+    questionnaire.update({
+      view: 'results'
+    });
+
+    var results = questionnaire.getResults();
+
+    expect(results).not.to.be.undefined;
+  });
+
+  it('should register an event handler', function() {
+    var test = false;
+
+    questionnaire.on('test', function() {
+      test = true;
+    });
+
+    questionnaire.emit('test');
+
+    expect(test).to.be.true;
+  });
+
+  it('should emit a "results" event if the results are displayed', function() {
+    var test;
+
+    questionnaire.on('results', function(results) {
+      test = results;
+    });
+
+    questionnaire.update({
+      view: 'results'
+    });
+
+    console.log(test[0]);
+
+    expect(test).not.to.be.undefined;
+  });
+
   it('should throw an error if any of the required functions is not specified when creating a type', function() {
 
     var type = function() {
@@ -269,6 +307,3 @@ describe('BpmnQuestionnaire', function() {
   });
 
 });
-
-  
-
