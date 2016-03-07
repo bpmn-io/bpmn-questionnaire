@@ -94,7 +94,6 @@ module.exports = function(grunt) {
 
   });
 
-
   // Tasks
   grunt.registerTask('build-css', [ 'cssmin:concat', 'css_wrap', 'cssmin:minify' ]);
   grunt.registerTask('build-js', [ 'browserify:dist', 'uglify' ]);

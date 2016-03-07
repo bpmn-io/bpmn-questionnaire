@@ -274,8 +274,6 @@ describe('BpmnQuestionnaire', function() {
       view: 'results'
     });
 
-    console.log(test[0]);
-
     expect(test).not.to.be.undefined;
   });
 
