@@ -18,7 +18,7 @@ A library for questionnaires on BPMN 2.0.
 
 [__Check out an example project__](https://github.com/bpmn-io/bpmn-questionnaire-example)
 
-### Creating a questionnaire:
+### Creating a questionnaire
 
 ```javascript
 var q = new BpmnQuestionnaire({
@@ -60,8 +60,8 @@ var single = BpmnQuestionnaire.createType({
 
 ```javascript
 {  
-   "name":"Name of questionnaire",
-   "intro":"Introduction",
+   "name":"BPMN-Grundlagentest",
+   "intro":"Bitte beantworten sie die nachfolgenden Fragen.",
    "questions":[  
       {  
          "type":"single",
@@ -75,6 +75,31 @@ var single = BpmnQuestionnaire.createType({
    ]
 }
 ```
+
+To include a BPMN 2.0 diagram in a question add a `diagram` property to it.
+
+```
+"diagram":{  
+  "url":"https://raw.githubusercontent.com/bpmn-io/bpmn-questionnaire/master/test/fixtures/bpmn/diagram-1.bpmn",
+  "interactive":true,
+  "rightAnswers":[
+     "IntermediateCatchEvent_1r9cp4a",
+     "InclusiveGateway_1jd0hrf",
+     "EndEvent_0diucuw",
+     "IntermediateThrowEvent_03x03k5"
+  ],
+  "noSelect":{
+     "elements":[
+     ],
+     "types":[
+        "label",
+        "participant"
+     ]
+  }
+}
+```
+
+You can either provide a URL of a diagram via `url` or inline it via `xml`. Diagrams are not interactive by default. If you want your diagram to be interactive set `interactive` to true. Thus interaction is enabled. Add the IDs of all elements that belong to the right answer to ``rightAnswers`. Via `noSelect` you can specify element IDs or types of BPMN 2.0 elements that will not be selectable.
 
 ## Building
 
