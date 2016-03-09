@@ -68,8 +68,12 @@ var single = BpmnQuestionnaire.createType({
          // ...
       },
       {  
-         "type":"single",
+         "type":"multiple",
          // ...
+      },
+      {
+        "type":"interactive",
+        // ...
       },
       // ...
    ]
