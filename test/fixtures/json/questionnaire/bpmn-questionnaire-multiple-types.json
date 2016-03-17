@@ -1,51 +1,51 @@
-{  
+{
    "name":"BPMN-Grundlagentest",
    "intro":"Bitte beantworten sie die nachfolgenden Fragen. In den meisten Fällen ist nur eine Antwort korrekt, in Ausnahmefällen auch mehrere. Im jeweiligen Fragentext ist ein expliziter Hinweis enthalten, ob es nur eine oder mehrere richtige Antworten gibt.",
    "questions":[
-      {  
+      {
          "type":"single",
          "text":"Wofür steht BPMN 2.0?",
-         "answers":[  
+         "answers":[
             "Business Process Management Notation 2.0",
             "Business Process Modeling Notation 2.0",
             "Business Process Mastering Notation 2.0",
             "Business Process Model and Notation 2.0"
          ],
-         "rightAnswer":[  
+         "rightAnswer":[
             "Business Process Model and Notation 2.0"
          ]
-      },  
-      {  
+      },
+      {
          "type":"single",
          "text":"Welche Institution ist für BPMN verantwortlich?",
-         "answers":[  
+         "answers":[
             "OASIS",
             "OMG",
             "ISO",
             "UML"
          ],
-         "rightAnswer":[  
+         "rightAnswer":[
             "OMG"
          ]
       },
-      {  
+      {
          "type":"multiple",
          "text":"Welche Aufgaben kann eine Process Engine übernehmen? (Zwei richtige Antworten)",
-         "answers":[  
+         "answers":[
             "Die Verwaltung fachlicher Prozessmodelle.",
             "Die Ausführung technischer Prozessmodelle.",
             "Das Messen von (technischen) Kennzahlen.",
             "Die Einführung einer Serviceorientierten Architektur."
          ],
-         "rightAnswers":[  
+         "rightAnswers":[
             "Die Ausführung technischer Prozessmodelle.",
             "Das Messen von (technischen) Kennzahlen."
          ]
       },
-      {  
+      {
          "type":"single",
          "text":"Welche Aussage zum Verhältnis zwischen BPMN und BPEL ist korrekt?",
-         "answers":[  
+         "answers":[
             "BPMN und BPEL besitzen dieselbe Symbolik.",
             "BPEL ist nur für Techniker gedacht, BPMN nur für das Business.",
             "BPMN 2.0 wird BPEL vermutlich ersetzen.",
@@ -55,10 +55,10 @@
             "BPMN 2.0 wird BPEL vermutlich ersetzen."
          ]
       },
-      {  
+      {
          "type":"single",
          "text":"Was ist die wichtigste Neuerung an BPMN 2.0?",
-         "answers":[  
+         "answers":[
             "Die Einführung einer Farbsemantik.",
             "Die Erweiterung um Organigramme.",
             "Die Definition eines formalen Metamodells.",
@@ -68,10 +68,10 @@
             "Die Definition eines formalen Metamodells."
          ]
       },
-      {  
+      {
          "type":"single",
          "text":"Was ist eine Prozessinstanz?",
-         "answers":[  
+         "answers":[
             "Ein Prozessbeteiligter.",
             "Ein konkreter Durchlauf eines Prozesses.",
             "Ein Mensch, der den Prozess besonders gut kennt.",
@@ -81,10 +81,10 @@
             "Ein konkreter Durchlauf eines Prozesses."
          ]
       },
-      {  
+      {
          "type":"interactive",
          "text":"Dieses Prozessmodell enthält 4 Fehler. Bitte wählen sie alle fehlerhaften Elemente aus.",
-         "diagram":{  
+         "diagram":{
             "url":"https://raw.githubusercontent.com/bpmn-io/bpmn-questionnaire/master/test/fixtures/bpmn/diagram-1.bpmn",
             "interactive":true,
             "rightAnswers":[
@@ -103,10 +103,29 @@
             }
          }
       },
-      {  
+      {
+         "type":"interactive",
+         "text":"Wählen sie das exklusive Gateway aus.",
+         "diagram":{
+            "url":"",
+            "interactive":true,
+            "rightAnswers":[
+               "InclusiveGateway_0ahc649"
+            ],
+            "noSelect":{
+               "elements":[
+               ],
+               "types":[
+                  "label",
+                  "participant"
+               ]
+            }
+         }
+      },
+      {
          "type":"single",
          "text":"Der unten stehende Prozess wird gestartet. Wie lange \"lebt\" die Prozessinstanz?",
-         "answers":[  
+         "answers":[
             "Unendlich lange.",
             "30 Tage.",
             "45 Tage.",
