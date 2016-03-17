@@ -107,8 +107,9 @@
          "type":"interactive",
          "text":"Wählen sie das exklusive Gateway aus.",
          "diagram":{
-            "url":"",
+            "url":"https://raw.githubusercontent.com/bpmn-io/bpmn-questionnaire/master/test/fixtures/bpmn/diagram-3.bpmn",
             "interactive":true,
+            "singleSelect":true,
             "rightAnswers":[
                "InclusiveGateway_0ahc649"
             ],
