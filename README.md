@@ -104,7 +104,7 @@ To include a BPMN 2.0 diagram in a question add a `diagram` property to it.
 }
 ```
 
-You can either provide a URL of a diagram via `url` or inline it via `xml`. Diagrams are not interactive by default. If you want your diagram to be interactive set `interactive` to true. Thus interaction is enabled. Add the IDs of all elements that belong to the right answer to ``rightAnswers`. Via `noSelect` you can specify element IDs or types of BPMN 2.0 elements that will not be selectable. Via `singleSelect` you can specify if only one ore multiple elements can be selected at the same time.
+You can either provide a URL of a diagram via `url` or inline it via `xml`. Diagrams are not interactive by default. If you want your diagram to be interactive set `interactive` to true. Thus interaction is enabled. Add the IDs of all elements that belong to the right answer to `rightAnswers`. Via `noSelect` you can specify element IDs or types of BPMN 2.0 elements that will not be selectable. Via `singleSelect` you can specify if only one ore multiple elements can be selected at the same time.
 
 ## Building
 
