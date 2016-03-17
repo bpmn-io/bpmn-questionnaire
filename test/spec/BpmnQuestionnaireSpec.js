@@ -10,6 +10,9 @@ var h                 = require('virtual-dom/h');
 // bpmn-questionnaire
 var BpmnQuestionnaire = require('../../lib/BpmnQuestionnaire');
 
+// Sample plugin
+var plugin            = require('../fixtures/js/plugins/translation.js');
+
 // Test helpers
 var TestContainer     = require('mocha-test-container-support'),
     TestHelper        = require('../TestHelper');
@@ -239,6 +242,67 @@ describe('BpmnQuestionnaire', function() {
 
     expect(questionnaire.state.currentQuestion).to.be.equal(currentQuestion);
 
+  });
+
+  it('should return an instance of the requested service', function() {
+    var service = questionnaire.get('translator');
+
+    expect(service).not.to.be.undefined;
+  });
+
+  it('should throw an error if the requested service does not exist', function() {
+    var get = questionnaire.get.bind(questionnaire, 'nope');
+
+    expect(get).to.throw('No such service');
+  });
+
+  it('should have a translation service', function() {
+    var t = questionnaire.get('translator');
+
+    expect(t).to.be.exist;
+  });
+
+  it('should be possible to use the translation service without a plugin', function() {
+    var t = questionnaire.get('translator');
+    var translation = t('Next');
+
+    expect(translation).to.equal('Next');
+  });
+
+  it('should be possible to use the translation service with a plugin', function() {
+    plugin.setLanguage('de');
+    plugin.addLanguage('de', {
+      'Start':        'Beginnen',
+      'Back':         'Zurück',
+      'Skip':         'Überspringen',
+      'Check answer': 'Antwort überprüfen',
+      'Next':         'Weiter',
+      'View results': 'Ergebnisse ansehen',
+      'Start over':   'Von vorne beginnen'
+    });
+
+    var s = BpmnQuestionnaire.createType({
+      renderQuestion:     function() {},
+      renderResult:       function() {},
+      checkIfValidAnswer: function() {},
+      checkIfRightAnswer: function() {}
+    });
+
+    var q = new BpmnQuestionnaire({
+      container: element,
+      questionnaireJson: questionnaireJson,
+      types: {
+        single: s
+      },
+      plugins: {
+        translator: plugin.t
+      }
+    });
+
+    var t = q.get('translator');
+    var translation = t('Start');
+
+    expect(translation).to.equal('Beginnen');
   });
 
   it('should return the results of a questionnaire', function() {
