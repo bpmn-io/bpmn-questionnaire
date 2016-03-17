@@ -16,7 +16,13 @@ describe('Translator', function() {
 
     plugin.setLanguage('de');
     plugin.addLanguage('de', {
-      'Next': 'Nächste'
+      'Start':        'Beginnen',
+      'Back':         'Zurück',
+      'Skip':         'Überspringen',
+      'Check answer': 'Antwort überprüfen',
+      'Next':         'Weiter',
+      'View results': 'Ergebnisse ansehen',
+      'Start over':   'Von vorne beginnen'
     });
     translatorWithPlugin = new Translator(plugin.t);
   });
@@ -50,7 +56,7 @@ describe('Translator', function() {
   it('should use the plugin for translation if provided', function() {
     var translation = translatorWithPlugin.translate('Next');
 
-    expect(translation).to.equal('Nächste');
+    expect(translation).to.equal('Weiter');
   });
 
 });

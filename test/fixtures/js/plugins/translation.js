@@ -5,6 +5,7 @@ var has = require('lodash/has');
 
 // An example plugin that can be used with the translation service
 var translation = (function() {
+
   var language,
       resources = {};
 
@@ -17,6 +18,7 @@ var translation = (function() {
   }
 
   function t(key) {
+
     if (has(resources, language + '.' + key)) {
       return resources[language][key];
     } else {

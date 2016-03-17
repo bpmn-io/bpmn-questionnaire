@@ -295,6 +295,8 @@ describe('BpmnQuestionnaire', function() {
         single: s
       },
       plugins: {
+
+        // We don't need to bind thanks to closure
         translator: plugin.t
       }
     });
