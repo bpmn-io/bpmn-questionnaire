@@ -17,6 +17,7 @@ A library for questionnaires on BPMN 2.0.
 ## Example
 
 [__Check out an example project__](https://github.com/bpmn-io/bpmn-questionnaire-example)
+[__Check out further examples__](https://github.com/philippfromme/bpmn-questionnaire-examples)
 
 ### Creating a questionnaire
 
