@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "0.12.7"
+  - "4.3.2"
 
 script:
   - npm run test
@@ -10,4 +10,3 @@ before_install:
 
 before_script:
   - grunt build-css
-  
