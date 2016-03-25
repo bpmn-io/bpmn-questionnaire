@@ -1,6 +1,6 @@
 # bpmn-questionnaire
 
-<img style="height: 15px" src="/resources/img/logo.png">
+[![Build Status](https://travis-ci.org/bpmn-io/bpmn-questionnaire.svg?branch=master)](https://travis-ci.org/bpmn-io/bpmn-questionnaire)
 
 __Note: This library is in early development stage.__
 
