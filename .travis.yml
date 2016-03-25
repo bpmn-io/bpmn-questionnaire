@@ -1,9 +1,13 @@
 language: node_js
-node_js: '0.12.7'
+node_js:
+  - "0.12.7"
 
 script:
   - npm run test
 
 before_install:
-  - npm install -g grunt-cli wiredeps
-  - wiredeps --branch=$TRAVIS_BRANCH --tag=$TRAVIS_TAG --verbose
+  - npm install -g grunt-cli
+
+before_script:
+  - grunt build-css
+  
