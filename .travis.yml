@@ -3,7 +3,7 @@ node_js:
   - "4.3.2"
 
 script:
-  - npm run test
+  - grunt test
 
 before_install:
   - npm install -g grunt-cli
